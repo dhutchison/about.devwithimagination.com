@@ -1,0 +1,139 @@
+---
+layout: main
+profile: true
+---
+
+<section class="profile-container">
+    <section class="profile-information">
+      {% assign sectionData = site.data.resume.info %}
+      {% if sectionData.download_path %}
+      <div class="profile-download">
+        <a href="{{ sectionData.download_path }}" alt="Download PDF"><i class="fa fa-lg fa-download"></i></a>
+      </div>
+      {% endif %}
+      <img class="profile-qrcode" src="{{ sectionData.qrcode_image }}" alt="QR Code for this page">
+      <h3 class="profile-section-title">
+        <i class="fa fa-lg fa-user"></i><span>Profile</span>
+      </h3>
+
+      
+
+      <div class="profile-section-header">
+        <div class="profile-section-name">
+          <img class="profile-image" src="{{ sectionData.image }}" alt="{{ sectionData.name }}">
+          <h3 class="profile-name">{{ sectionData.name }}</h3>
+          <h4 class="profile-position">{{ sectionData.position }}</h4>
+        </div>
+        <div class="profile-section-details">
+          {% if sectionData.phone %}
+          <div class="profile-phone">
+            <span class="profile-icon fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="profile-field">Phone: </span><a href="tel:{{ sectionData.phone }}">{{ sectionData.phone }}</a></div>{% endif %}
+          {% if sectionData.email %}
+          <div class="profile-email">
+            <span class="profile-icon fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="profile-field">Email: </span><a href="mailto:{{ sectionData.email }}">{{ sectionData.email }}</a></div>
+          {% endif %}
+          {% if sectionData.website_link %}
+          <div class="profile-www">
+            <span class="profile-icon fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="profile-field">Blog: </span><a href="{{ sectionData.website_link }}">{{ sectionData.website_display }}</a></div>
+          {% endif %}
+        </div>
+
+      </div>
+      <div class="profile-section-content">
+        <p>{{ sectionData.text }}</p>
+      </div>
+
+
+    </section>
+
+    <section class="profile-employment">
+      {% assign sectionData = site.data.resume.experience %}
+      <h3 class="profile-section-title"><i class="fa fa-lg fa-line-chart"></i><span>Employment</span></h3>
+
+      {% for item in sectionData %}
+
+      <div class="profile-employment-item">
+        <div class="profile-section-header">
+          <div class="profile-section-name">
+            <h3 class="profile-name">{{ item.where }}</h3>
+
+            {% for role in item.roles %}
+            <h4 class="profile-position">{{ role.title }}</h4>
+            <div class="profile-section-details">
+              <div class="profile-when">{{ role.when }}</div>
+            </div>
+            {% endfor %}
+            
+          </div>
+          
+        </div>
+
+        <div class="profile-section-content">
+          <p>{{ item.text | markdownify }}</p>
+        </div>
+      </div>
+
+      {% endfor %}
+
+    </section>
+
+    <section class="profile-education">
+      {% assign sectionData = site.data.resume.education %}
+      <h3 class="profile-section-title"><i class="fa fa-lg fa-mortar-board"></i><span>Education</span></h3>
+
+      {% for item in sectionData %}
+
+      <div class="profile-education-item">
+        <div class="profile-section-header">
+          <div class="profile-section-name">
+            <h3 class="profile-name">{{ item.qualification | markdownify }}</h3>
+            <h4 class="profile-position">{{ item.location }}</h4>
+          </div>
+          <div class="profile-section-details">
+            <div class="profile-when">
+            {% if item.when %}{{ item.when }}{% endif %}
+            {% if item.when_from %}<span class="profile-when-from">{{ item.when_from }}</span> &mdash; <span class="profile-when-to">{{ item.when_to }}</span>{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+
+    </section>
+
+    <section class="profile-skills">
+      {% assign sectionData = site.data.resume.skills %}
+      <h3 class="profile-section-title"><i class="fa fa-lg fa-code"></i><span>Skills</span></h3>
+
+      <div class="profile-section-content">
+        <p>{{ sectionData.text | markdownify }}</p>
+      </div>
+
+    </section>
+
+    {% if site.data.resume.interests.text | size > 0 %}
+     <section class="profile-interests">
+      {% assign sectionData = site.data.resume.interests %}
+      <h3 class="profile-section-title"><i class="fa fa-lg fa-smile-o"></i><span>Interests</span></h3>
+
+        <div class="profile-section-content">
+        {{ sectionData.text | markdownify }}
+        </div>
+
+    </section>
+    {% endif %}
+
+  </section>  
