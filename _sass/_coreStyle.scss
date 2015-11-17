@@ -1,0 +1,395 @@
+//File defines core, site wide styles
+
+@import "commonStyle";
+
+//Include the font definitions
+@include fonts();
+
+/* Global Reset */
+@include reset();
+
+html, body { height: 100%; }
+
+body {
+	color: $mainFontColour;
+	font-family: $contentFonts;
+	font-weight: $contentFontWeight;
+
+    @include respond-to(print) {
+        font-family: $contentPrintFonts;
+        font-weight: $contentPrintFontWeight;
+    };
+
+    @include mobileSize(font-size, $fontSizeStandard, $fontSizeSmaller, $fontSizeSmallest);
+
+	text-align: center;
+	
+        /* Carbon fibre 
+     * by Atle Mo (design), Lea Verou (code)
+     * from http://lea.verou.me/css3patterns/#carbon-fibre */
+    background:
+        radial-gradient(black 15%, transparent 16%) 0 0,
+        radial-gradient(black 15%, transparent 16%) 8px 8px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:#282828;
+    background-size:16px 16px;
+	// background-color: @backgroundBlue;
+	
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $headerFontWeight;
+
+    @include respond-to(print) {
+        font-weight: $headerPrintFontWeight;
+    };
+}
+
+h1 {
+    @include mobileSize(font-size, 2.4, 2.4, 1.6);
+    line-height: 1em;
+}
+
+h2 {
+    @include mobileSize(font-size, 1.75, 1.75, 1.4);
+    line-height: 1em;
+    @include remSize(margin-top, 1);
+}
+
+h3 {
+    @include remSize(font-size, 1.3);
+}
+
+h4, h5, h6 {
+    font-size: 100%; 
+}
+
+p { 
+    margin: 1em 0; 
+}
+
+a { 
+    color: $linkColour;
+	transition-duration: .5s;
+	text-decoration: underline;
+
+	
+	&:hover {
+	    color: $linkHoverColour;
+	}
+}
+
+table {
+	font-size: inherit;
+}
+
+.drop-cap { 
+    float: left; 
+    color: $mainHeaderLeftGradient; 
+    @include remSize(font-size, 4.2);
+    @include remSize(line-height, 3.3);  
+    @include remSize(padding-right, 0.5);
+    font-family: Georgia; 
+}
+
+.footnotes {
+    @include remSize(font-size, 0.8);
+}
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.heading, .archivesHeader, .post header, .profile-author, .footer, .chart-wrapper header {
+
+    background-color: $headerBackgroundDarkBlue;
+    padding: 1em 1em 1em 2em;
+
+    @include respond-to(handhelds) {
+        padding-left: 1em;
+    }; 
+
+    color: $headerFontColour;
+
+    a {
+        color: $headerFontColour;
+
+        &:hover{
+            color: $headerLinkHoverColour;
+            transition: .5s;
+        }
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.rss {
+    text-align: center;
+}
+
+.container{
+
+    .site {
+    	/*	background*/
+    	background-color: $backgroundColour;
+    	
+    	/* text */
+    	line-height: $lineHeightEM;
+    	text-align: left;
+    	text-rendering: optimizelegibility;
+    	font-weight: $contentFontWeight;
+
+        @include respond-to(print) {
+            font-weight: $contentPrintFontWeight;
+        };
+    	
+    	/* Sizing */
+    	@include mobileSize(width, $widthStandard, $widthSmaller, $widthSmallest);
+
+    	padding-bottom: 0;
+        @include respond-to(handhelds) {
+            padding-top: 1em;
+        };
+
+   		@include siteMargin();
+        
+        h2 {
+    		font-family: $headerFonts;
+    		text-align: left;    
+
+            @include respond-to(print) {
+                font-family: $headerPrintFonts;
+            };
+        }
+    
+        hr {
+        	border: 0;
+        	height: 0;
+        	border-top: 1px solid rgba(0, 0, 0, 0.1);
+        	border-bottom: 1px solid fadeout($dividerColour, 40%);
+        	margin-top: 1em;
+            margin-bottom: 1em; 
+        }
+    
+    	.header {
+
+            background-color: $backgroundColour;
+
+    		font-family: $headerFonts;
+    		text-align: center;
+
+            position: inherit;
+            height: auto;
+
+            top: 0;
+            z-index: 100000;
+
+            @include remSize(padding-bottom, 1);
+
+            @include respond-to(print) {
+                font-family: $headerPrintFonts;
+            };
+    		
+    		h1.title {
+                margin-bottom: 0.25em;
+    			color: $mainHeaderColour;
+
+                font-family: $titleFonts;
+                font-weight: $titleFontWeight;
+
+                @include respond-to(print) {
+                    font-family: $titlePrintFonts;
+                    font-weight: $titlePrintFontWeight;
+                };
+
+                font-size: $fontSizeTitle;
+                @include respond-to(handhelds) {
+                   font-size: $fontSizeTitleMobile;
+                };
+
+                a:hover {
+                    color: $dividerColour;
+                }
+
+
+                margin-top: 0;
+    		}
+    		
+    		#nav {
+                ul {
+                    margin: 0;
+                }
+    		    li {
+    		        display: inline;
+
+                    .rss {
+                        left: 0;
+                    }
+    		    }
+
+                .fa-li, .fa-li.fa-lg {
+                    left: 0;
+                    position: static;
+                    margin-left: -0.5em;
+                }
+    		}
+    		
+    		.links {
+    		    width: 100%;
+    		    font-weight: $contentFontWeight;
+                @include remSize(font-size, 1.2);
+    		
+                display: inline-block;
+                text-align: center;
+    
+    			ul {
+    				list-style-type: none;
+    				
+    				li {
+    					display: inline;
+    					
+    					a {
+    						text-decoration: none;
+                            position: relative;
+    					}
+    					
+    					a:hover {
+    						text-decoration: underline;
+    					}
+    				}
+
+                    li + li:before {
+                        content: " | ";
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        @include mobileSize(padding-left, 10px, 10px, 5px);
+                        @include mobileSize(padding-right, 10px, 10px, 5px);
+                    }
+    			}
+    		}
+    	}
+    	
+    	.content {
+            margin-top: 0;
+
+            h2 {
+                .meta {
+                    @include remSize(font-size, 1);
+                }
+            }
+
+    		
+    		.pagination {
+    		    text-align: center;
+    		    
+    		    ul {
+    		        list-style:none; 
+        		    
+    	    	    
+    	    	    li{
+                        display: inline-block;
+                        margin-right: 1em;
+    	    	    }
+    	    	    
+    		    }    		    
+    		}
+    	}
+    	
+    	.footer {
+    	    	        
+   	        font-size: 0.8em;
+    		// overflow: hidden;
+    		padding-top: 1em;
+    		z-index: 1;
+    		
+    		.copy {
+    			width: 100%;
+                padding-top: 1em;
+    			text-align: center;
+    		}
+    	}
+    }
+}
+
+@media
+    only print {
+    
+        @page {
+            margin: 0.75in 0.5in 0.5in 0.5in;
+
+            size: A4;
+        }
+        
+        body {
+            background: none;
+            background-color: #FFFFFF;
+
+            color: $mainFontPrintColour;
+            font-size: $fontSizeStandardPrint;
+        }
+    
+        .container {
+            .site {
+                
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            
+                .header, .footer {
+                    display: none;
+                }
+                
+                .content {
+                    margin-top: 0;
+                }
+                
+                a {
+                    text-decoration: none;
+                    color: $mainHeaderColour;
+                }
+            }
+        }
+
+        .post-footer .share, #disqus_thread, .page-navigation {
+            display: none;
+        }
+
+        .author-links {
+            display: none;
+        }
+        
+}
+
+
+/* ==========================================================================
+    3. Utilities - These things get used a lot
+    ========================================================================== */
+ 
+ /* Hides shit */
+ .hidden {
+     text-indent: -9999px;
+     direction: ltr;
+     visibility: hidden;
+     display: none;
+ }
+ 
+ /* Creates a responsive wrapper that makes our content scale nicely */
+ .inner {
+     position: relative;
+     width: 80%;
+     max-width: 700px;
+     margin: 0 auto;
+ }
+ 
+ /* Centres vertically yo. (IE8+) */
+ .vertical {
+     display: table-cell;
+     vertical-align: middle;
+ }
+
