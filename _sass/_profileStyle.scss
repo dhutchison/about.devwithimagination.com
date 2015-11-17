@@ -11,6 +11,57 @@ $profileSectionHeaderBackgroundTwo: #BE43E8;
 $profileSectionHeaderBackgroundThree: #FF5E3D;
 $profileSectionHeaderBackgroundFour: #E8B943;
 
+// Author styling
+.author {
+    
+    a.profile-image {
+	    float:left;
+    	width: 80px;
+    	
+        @include respond-to(handhelds) {
+            width: 40px;
+        };
+    }
+}
+
+.footer .author header {
+    margin-right: 0.5em;
+}
+
+.footer .author {
+    text-align: center;
+}
+
+.author-name {
+    margin-top: 0.25em;
+    margin-bottom: 0;
+}
+
+img.profile-image {
+	width:80px;
+	height:auto;
+  	border-radius: 50px;
+  	
+  	@include respond-to(handhelds) {
+  	    border-radius: 25px;
+  	};
+}
+
+
+.author-links {
+    width: 100%;
+    text-align: center;
+
+    ul ,li {
+        display: inline-block;
+    }
+
+    li + li {
+        margin-left: 4em;
+    }
+
+}
+
 .profile-container {
     background-color: $profileBackgroundColour;
     color: $profileFontColour;
