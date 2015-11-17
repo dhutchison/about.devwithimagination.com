@@ -88,6 +88,15 @@ $horizontalSpacing: 2em;
 @mixin fonts() {
     /* Font Definitions */
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
+    
+    $lg-font-path: '/assets/fonts/league-gothic';
+    @font-face {
+        font-family: 'League Gothic';
+        src: url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.eot");
+        src: local('☺'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.woff") format('woff'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.ttf") format('truetype'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.svg") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
 }
 
 
@@ -111,9 +120,13 @@ $horizontalSpacing: 2em;
 
 @mixin remSize($property, $sizeValue, $pxFontSize: $fontSizeStandard) {
     
-    @if isnumber($sizeValue) and get-unit($sizeValue) == '' {    
-        $pxValue: round(($sizeValue * unit($pxFontSize)));
-        #{$property}: #{$pxValue}px;
+    @if isnumber($sizeValue) and unitless($sizeValue) {    
+        $pxValue: round(($sizeValue * $pxFontSize));
+        @if unitless($pxValue) {       
+            #{$property}: #{$pxValue}px;
+        } @else {
+            #{$property}: #{$pxValue};
+        }
         #{$property}: #{$sizeValue}rem; 
     } @else {
         #{$property}: $sizeValue;
@@ -188,7 +201,17 @@ $horizontalSpacing: 2em;
 	@include respond-to(handhelds) {
 	    margin-right: 0px;
 	};
-}    
+}   
+
+@mixin siteMargin() {
+    margin-right: auto;
+    margin-left: auto;
+
+    @include respond-to(handhelds) {
+        margin-right: 0;
+        margin-left: 0;
+    };
+} 
 
 @mixin clear {
     clear: both;
