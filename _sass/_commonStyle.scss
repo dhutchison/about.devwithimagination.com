@@ -1,0 +1,195 @@
+// Common style information between print and screen
+
+
+// Media query values ************************/
+$mqiPhone: "only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px)";
+$mqHandheld: "only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px)";
+ 
+$mqiPad: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) ";
+$mqTablet: "only screen and (min-width : 768px) and (max-width : 1024px) ";
+//Retina add rule and (-webkit-min-device-pixel-ratio: 2)
+//Non-Retina add rule and (-webkit-min-device-pixel-ratio: 1)
+
+//
+// Variables 
+//
+$backgroundBlue: #5D83C4;
+$dividerColour: #5D83C4;
+
+$headerBackgroundDarkBlue: #212E45; 
+$headerFontColour: #DDDDDD;
+$headerLinkHoverColour: $backgroundBlue;
+
+$mainHeaderColour: #475261;
+$mainFontColour: #333333;
+$outerBackgroundColour: #666666;
+$shadowColour: #333333;
+$backgroundColour: #FFFFFF;
+
+$mainFontPrintColour: #000000;
+
+$mainHeaderLeftGradient: #5D83C4;
+
+$headerHeight: 6em;
+
+
+$lineHeight: 1.5;
+$lineHeightEM: #{$lineHeight}em;
+
+$linkColour: $mainFontColour;
+$linkHoverColour: $dividerColour;
+
+
+$titleFonts: 'League Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$titlePrintFonts: Helvetica;
+$titleFontWeight: normal;
+$titlePrintFontWeight: normal;
+$headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headerPrintFonts: $titlePrintFonts;
+$headerFontWeight: 700;
+$headerPrintFontWeight: bold;
+$contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$contentPrintFonts: $titlePrintFonts;
+$contentFontWeight: 300;
+$contentPrintFontWeight: normal;
+
+$categoryTagColour: #E82C0C;
+$tagColour: #0089e0;
+
+$fontSizeTitle: 6em;
+$fontSizeTitleMobile: 5em;
+$fontSizeStandard: 18px;
+$fontSizeSmaller: 16px;
+$fontSizeSmallest: 14px;
+
+$fontSizeTitlePrint: 32pt;
+$fontSizeLargePrint: 16pt;
+$fontSizeStandardPrint: 12pt;
+
+$widthStandard: 60%;
+$widthSmaller: 80%;
+$widthSmallest: 100%;
+
+$verticalSpacing: 1em;
+$horizontalSpacing: 2em;
+
+///////////////////
+// Common Mixins //
+///////////////////
+@mixin reset() {
+    * {
+    	margin: 0;
+    	padding: 0;
+    }
+}
+
+
+
+@mixin fonts() {
+    /* Font Definitions */
+    @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
+}
+
+
+//Function just for doing mobile sizing. If number and no unit, remsize. otherwise use supplied value
+@mixin mobileSize($property, $sizeValue, $iPadSizeValue: $sizeValue, $iPhoneSizeValue: $sizeValue) {
+    
+    @include remSize($property, $sizeValue, $fontSizeStandard);
+    
+    @if $iPadSizeValue != $sizeValue {
+        @include respond-to(tablets) {
+            @include remSize($property, $sizeValue, $fontSizeSmaller);
+        }
+    }
+
+    @if $iPhoneSizeValue != $sizeValue {
+        @include respond-to(handhelds) {
+            @include remSize($property, $sizeValue, $fontSizeSmallest);
+        }
+    }
+}
+
+@mixin remSize($property, $sizeValue, $pxFontSize: $fontSizeStandard) {
+    
+    @if isnumber($sizeValue) and get-unit($sizeValue) == '' {    
+        $pxValue: round(($sizeValue * unit($pxFontSize)));
+        #{$property}: #{$pxValue}px;
+        #{$property}: #{$sizeValue}rem; 
+    } @else {
+        #{$property}: $sizeValue;
+    }
+}
+
+@mixin respond-to($media) {
+    
+    @if $media == handhelds {
+        @media #{$mqiPhone}, #{$mqHandheld} {
+            @content
+        }
+    } @else if $media == tablets {
+        @media #{$mqiPad},#{$mqTablet} { 
+            @content 
+        }
+    } @else if $media == print {
+        @media only print { 
+            @content 
+        }
+    } @else {
+        // Standard screen
+        @content
+    }
+        
+}
+
+@mixin liImage($image, $size: 16px) {
+    list-style: none;
+    background-image: $image;
+    background-size: $size; 
+    background-repeat: no-repeat;
+    background-position: 0px ($size / 4); 
+    padding-left: ($size + ($size / 4)); 
+}
+
+@mixin sitePadding() {
+	padding: $verticalSpacing $horizontalSpacing;
+	
+	@include respond-to(handhelds) {
+	    padding: $verticalSpacing;
+	};
+}
+
+@mixin siteLeftPadding() {
+	padding-left: $horizontalSpacing;
+    
+    @include respond-to(handhelds) {
+	    padding-left: 0;
+	};
+}
+
+@mixin siteRightPadding() {
+	padding-right: $horizontalSpacing;
+    
+    @include respond-to(handhelds) {
+	    padding-right: 0;
+	};
+}
+
+@mixin siteLeftMargin() {
+	margin-left: $horizontalSpacing;
+    
+    @include respond-to(handhelds) {
+	    margin-left: 0px;
+	};
+}
+
+@mixin siteRightMargin() {
+	margin-right: $horizontalSpacing;
+	
+	@include respond-to(handhelds) {
+	    margin-right: 0px;
+	};
+}    
+
+@mixin clear {
+    clear: both;
+}

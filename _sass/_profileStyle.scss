@@ -1,0 +1,326 @@
+@import 'commonStyle';
+/////////////////
+// Profile //////
+/////////////////
+
+$profileFontColour: $mainFontColour;
+$profileBackgroundColour: $backgroundColour;
+
+$profileSectionHeaderBackgroundOne: #7E9CD0;
+$profileSectionHeaderBackgroundTwo: #BE43E8;
+$profileSectionHeaderBackgroundThree: #FF5E3D;
+$profileSectionHeaderBackgroundFour: #E8B943;
+
+.profile-container {
+    background-color: $profileBackgroundColour;
+    color: $profileFontColour;
+}
+
+.profile-download {
+    text-align: right;
+    @include mobileSize(margin-top, -2, -2, 0);
+    @include mobileSize(margin-right, 1, 1, 0);
+
+    a {
+        padding: 0.5em;
+        background-color: $profileSectionHeaderBackgroundOne;
+        color: $profileBackgroundColour;
+    }
+}
+
+.profile-qrcode {
+    display: none;
+}
+
+.profile-section-header {
+    overflow: hidden;
+    
+    text-align: center;
+
+    padding-top: $verticalSpacing;
+    padding-left: $horizontalSpacing;
+    padding-right: $horizontalSpacing;
+    margin-bottom: $verticalSpacing;
+}
+
+.profile-section-name {
+    @include remSize(min-width, 16);
+}
+
+.profile-section-content {
+    ul:last-child {
+        margin-bottom: $verticalSpacing;
+    }
+}
+
+.profile-section-title {
+    display: block;
+
+    position: relative;
+    line-height: 59px;
+    text-align: center;
+
+    color: $profileBackgroundColour;
+
+    span {
+        z-index: 1;
+    }
+
+    $iconFontSize: $horizontalSpacing;
+    i {
+        position: inherit;
+        display: block;
+        width: 100%;
+        left: 0;
+        padding: 0;
+
+        background-color: inherit;
+        height: 100%;
+        vertical-align: middle;
+        z-index: 0;
+    }
+
+    .fa-lg {
+        font-size: $iconFontSize;
+
+        line-height: 0.75em;
+        padding-top: 0.5em;
+    }
+}
+
+.profile-field {
+    display: none;
+}
+
+.profile-phone, .profile-email, .profile-www {
+    margin-right: 1em;
+    display: inline-block;
+}
+
+.profile-position {           
+    @include respond-to(handhelds) {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    };
+    
+}
+
+.profile-information {
+
+    .profile-section-title {
+        background: $profileSectionHeaderBackgroundOne;
+    }
+
+    .profile-icon {
+        color: $profileSectionHeaderBackgroundOne;
+    }
+
+    .profile-name {
+        @include remSize(font-size, 2.6);
+        line-height: 1em;
+    }
+
+    .profile-section-details {
+        @include remSize(font-size, 0.8);
+        @include remSize(line-height, 1);
+    }
+
+    .profile-image {
+        @include mobileSize(margin-right, 1, 0, 0);
+
+        border-radius: 25px;
+    }
+}
+
+.profile-employment {
+    .profile-section-title {
+        background: $profileSectionHeaderBackgroundTwo;
+    }
+}
+
+.profile-education {
+    .profile-section-title {
+        background: $profileSectionHeaderBackgroundThree;
+    }
+}
+
+.profile-skills {
+    .profile-section-title {
+        background: $profileSectionHeaderBackgroundFour;
+    }
+
+}
+
+.profile-author {
+    text-align: center;
+    padding: 1em !important;
+}
+
+.profile-section-content {
+    margin: 0 $horizontalSpacing;
+
+    li {
+        margin-left: $horizontalSpacing
+    }
+}
+
+@include respond-to(print) {
+
+    $horizontalSpacingPrint: 0;//(2 * @fontSizeStandardPrint);
+
+    .profile-container {
+        color: $mainFontPrintColour;
+    }
+
+    .profile-section-title {
+        width: auto;
+        height: auto;
+        line-height: inherit;
+
+        margin-bottom: 1em;
+        text-align: left;
+
+        i {
+            display: none;
+        }
+    }
+
+    // .profile-qrcode {
+    //     display: inline-block;
+    //     float: right;
+    //     height: 58px;
+    // }
+
+    .profile-section-header {
+
+        padding-left: $horizontalSpacingPrint;
+        padding-right: $horizontalSpacingPrint;
+    }
+
+    .profile-section-title {
+        font-size: $fontSizeLargePrint;
+    }
+
+    .profile-section-header, .profile-section-header h3, .profile-section-header h4, .profile-section-content {
+        font-size: $fontSizeStandardPrint;
+        text-align: left;
+    }
+
+    .profile-employment-item {
+        .profile-section-header, .profile-section-header h3, .profile-section-header h4, .profile-section-details {
+            text-transform: uppercase;
+            font-size: (0.8 * $fontSizeStandardPrint);
+        }
+    }
+
+    .profile-employment-item, .profile-education-item {
+
+        .profile-section-header, .profile-section-header h3, .profile-section-header h4 {
+            font-weight: $contentPrintFontWeight;
+        }
+
+        .profile-section-header {
+            padding-top: 0;
+
+            h3, h4 {
+                display: inline-block;  
+            }
+
+            h3 {
+                float: right;
+            }
+
+            h4 {
+                float: left;
+            }
+        }
+
+        .profile-section-header h4, .profile-section-header h3 {
+            
+            &:after{
+                content: ', ';
+                margin-right: 0.5em;
+            }
+        }
+    }
+
+    .fa-circle {
+        display: none;
+    }
+    .fa-stack-2x {
+        font-size: 1em;
+    }
+    .fa-inverse {
+        color: #333;
+    }
+
+    .profile-information, .profile-education, .profile-employment, .profile-skills {
+        .profile-section-title {
+            background-color: #FFFFFF;
+            color: inherit;
+        }
+    }
+
+    .profile-education, .profile-employment, .profile-skills {
+        .profile-section-name, .profile-section-details, .profile-when {
+            display: inline-block;
+            min-width: initial;
+            vertical-align: top;
+        }
+
+        .profile-section-title {
+            padding-left: $horizontalSpacingPrint;
+            padding-right: $horizontalSpacingPrint;
+        }
+    }
+
+    .profile-information {
+        
+        .profile-name {
+            width: auto;
+
+            font-size: $fontSizeTitlePrint;
+            line-height: $fontSizeTitlePrint;
+
+            margin-left: -0.07em;
+        }
+
+        .profile-section-header {
+            padding-top: 0;
+            margin-bottom: $fontSizeStandardPrint;
+        }
+
+        .profile-section-details {
+            line-height: 1.5em;
+            margin-top: 0.5em;
+
+            font-size: inherit;
+        }
+
+        .profile-section-content {
+            margin-top: ($fontSizeTitlePrint / 2);
+        }
+
+        .profile-phone, .profile-email, .profile-www {
+            margin-right: $fontSizeStandardPrint;
+        }
+
+        .profile-www a:before {
+            content: 'www.';
+        }
+
+        .profile-icon, .profile-image, .profile-section-title, .profile-position {
+            display: none;
+            margin: 0;
+        }
+
+    }
+
+    .profile-employment .profile-section-title {
+        margin-bottom: (0.5 * $fontSizeStandardPrint);
+    }
+
+    .profile-section-content{
+        margin: 0;
+    }
+}
