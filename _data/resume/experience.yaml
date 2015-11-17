@@ -1,0 +1,28 @@
+- where : "The SEEMiS Group LLP, Hamilton"
+  roles :
+  - title : "Software Development Lead"
+    when : "January 2015 - Present" 
+  - title : "Software Developer"
+    when : "July 2008 - December 2014"
+  text : |
+    I started off at SEEMiS as a fresh faced graduate, just out of university. In my time here I have honed my skills with a variety of technologies while also gaining confidence in my abilities as a developer. 
+    
+    This role consists of developing and supporting Management Information Systems used in the education sector by all 32 of the Scottish Councils. 
+    
+    My main responsibilities have grown over time, they now include : 
+    
+    - Full software development cycle involving clients and teams of developers, from requirements capture all the way through to delivery. The development environment consists of Eclipse, JUnit, Ant, Hudson and CVS. 
+    - Database design, implementation and optimization. The main database has always been Microsoft SQL Server, but MySQL has been used for a select few projects.
+    - Producing deliverable specifications from requirements which can be implemented by other developers.
+    - Testing of software; both during development and final integration testing using both manual and JUnit methods. This includes production of test plans for integration testing by other developers and client support team prior to deployment. 
+    - Presentation of developments to Client Support Team and clients in a non-technical manner. 
+    - Planning time using Scrum methodology to meet deadlines. 
+    - Providing third tier helpdesk support. 
+    - Mentor and advise other developers where required. 
+    - Production of technically focused documentation for new and existing systems. 
+    - Working with external organisations on projects such as data feeds. 
+    - Working with the Infrastructure team on new projects and resolving issues. 
+    - Configuration of application servers in a scripted and reproducible way.
+     
+    During my time here I have worked with a number of frameworks, both legacy and current. Server frameworks I have used include Spring, JDBC, EJB, RMI and various flavours of web services (RPC, SOAP and REST). User interface development has mostly been in Swing, but I have also had experience with JSP / servlets, HTML / Javascript and Echo2. Many open source products have been used in the solutions such as iText, JasperReports, SwingX and JXL, some which required fixes to be contributed.
+
