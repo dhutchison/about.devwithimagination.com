@@ -7,6 +7,6 @@ david:
   github: dhutchison
   stackoverflow: 230449/david-hutchison
   email: david@devwithimagination.com
-  pic: /images/self_square.jpg
-  pic_small: /images/self_square.jpg
-  profile_url: /profile/
+  pic: /assets/images/self_square.jpg
+  pic_small: /assets/images/self_square.jpg
+  profile_url: /
