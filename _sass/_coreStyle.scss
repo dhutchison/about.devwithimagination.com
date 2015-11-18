@@ -84,26 +84,13 @@ table {
 	font-size: inherit;
 }
 
-.drop-cap { 
-    float: left; 
-    color: $mainHeaderLeftGradient; 
-    @include remSize(font-size, 4.2);
-    @include remSize(line-height, 3.3);  
-    @include remSize(padding-right, 0.5);
-    font-family: Georgia; 
-}
-
-.footnotes {
-    @include remSize(font-size, 0.8);
-}
-
 /*****************************************************************************/
 /*
 /* Site
 /*
 /*****************************************************************************/
 
-.heading, .archivesHeader, .post header, .profile-author, .footer, .chart-wrapper header {
+.heading {
 
     background-color: $headerBackgroundDarkBlue;
     padding: 1em 1em 1em 2em;
@@ -127,6 +114,10 @@ table {
         margin-top: 0;
         margin-bottom: 0;
     }
+}
+
+.footer {
+    @extend .heading;
 }
 
 .rss {

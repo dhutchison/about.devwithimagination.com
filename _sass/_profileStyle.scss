@@ -158,10 +158,6 @@ img.profile-image {
 
 .profile-information {
 
-    .profile-section-title {
-        background: $profileSectionHeaderBackgroundOne;
-    }
-
     .profile-icon {
         color: $profileSectionHeaderBackgroundOne;
     }
@@ -183,26 +179,20 @@ img.profile-image {
     }
 }
 
-.profile-employment {
-    .profile-section-title {
-        background: $profileSectionHeaderBackgroundTwo;
+@each $section, $colour in (information, $profileSectionHeaderBackgroundOne), 
+    (employment, $profileSectionHeaderBackgroundTwo), 
+    (education, $profileSectionHeaderBackgroundThree), 
+    (skills, $profileSectionHeaderBackgroundFour) {
+        
+    .profile-#{$section} {
+        .profile-section-title {
+            background: #{$colour};
+        }
     }
-}
-
-.profile-education {
-    .profile-section-title {
-        background: $profileSectionHeaderBackgroundThree;
-    }
-}
-
-.profile-skills {
-    .profile-section-title {
-        background: $profileSectionHeaderBackgroundFour;
-    }
-
 }
 
 .profile-author {
+    @extend .heading;
     text-align: center;
     padding: 1em !important;
 }
