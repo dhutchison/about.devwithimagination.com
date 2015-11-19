@@ -15,12 +15,25 @@ def jekyll
 end
 
 task :deploy do
-    upload
+    deployToDev
 end
 
-def upload
+task :push do
+    deployToLive
+end
+
+def deployToDev
     puts 'Sending to server...'
-    sh 'rsync -avz --delete _site/ david@dev-lamp.local:/home/wwwroot/dwi/'
+    sh 'rsync -avz --exclude=wwwscot --delete _site/ david@dev-lamp.local:/home/wwwroot/dwi/'
     puts 'Sent'
 
+end
+
+def deployToLive
+    puts 'Pushing to live...'
+    currentTime = Time.now.strftime("%d/%m/%Y %H:%M")
+    sh 'rm -rf ./wwwscot'
+    sh 'rhc git-clone -a wwwscot'
+    sh 'cp -R _site/* wwwscot/'
+    sh "cd wwwscot && git add . && git commit -m 'New build #{currentTime}' && git push"
 end
