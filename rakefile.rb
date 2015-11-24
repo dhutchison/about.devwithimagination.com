@@ -33,6 +33,7 @@ def deployToLive
     puts 'Pushing to live...'
     currentTime = Time.now.strftime("%d/%m/%Y %H:%M")
     sh 'rm -rf ./wwwscot'
+    sh 'rm -rf _site/wwwscot'
     sh 'rhc git-clone -a wwwscot'
     sh 'cp -R _site/* wwwscot/'
     sh "cd wwwscot && git add . && git commit -m 'New build #{currentTime}' && git push"
