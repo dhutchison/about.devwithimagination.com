@@ -107,13 +107,13 @@ $horizontalSpacing: 2em;
     
     @if $iPadSizeValue != $sizeValue {
         @include respond-to(tablets) {
-            @include remSize($property, $sizeValue, $fontSizeSmaller);
+            @include remSize($property, $iPadSizeValue, $fontSizeSmaller);
         }
     }
 
     @if $iPhoneSizeValue != $sizeValue {
         @include respond-to(handhelds) {
-            @include remSize($property, $sizeValue, $fontSizeSmallest);
+            @include remSize($property, $iPhoneSizeValue, $fontSizeSmallest);
         }
     }
 }
