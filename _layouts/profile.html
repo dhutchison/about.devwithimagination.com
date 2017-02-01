@@ -8,10 +8,12 @@ profile: true
       {% assign sectionData = site.data.resume.info %}
       {% if sectionData.download_path %}
       <div class="profile-download">
-        <a href="{{ sectionData.download_path }}" alt="Download PDF"><i class="fa fa-lg fa-download"></i></a>
+        <a href="{{ sectionData.download_path }}"><i class="fa fa-lg fa-download"></i></a>
       </div>
       {% endif %}
+      {% if sectionData.qrcode_image %}
       <img class="profile-qrcode" src="{{ sectionData.qrcode_image }}" alt="QR Code for this page">
+      {% endif %}
       <h3 class="profile-section-title">
         <i class="fa fa-lg fa-user"></i><span>Profile</span>
       </h3>
@@ -81,7 +83,7 @@ profile: true
         </div>
 
         <div class="profile-section-content">
-          <p>{{ item.text | markdownify }}</p>
+          {{ item.text | markdownify }}
         </div>
       </div>
 
@@ -98,7 +100,7 @@ profile: true
       <div class="profile-education-item">
         <div class="profile-section-header">
           <div class="profile-section-name">
-            <h3 class="profile-name">{{ item.qualification | markdownify }}</h3>
+            <h3 class="profile-name">{% if item.url %} <a href="{{ item.url }}" {% if item.urlalt %} alt="{{ item.urlalt }}" {% endif %}>{% endif %}{{ item.qualification }}{% if item.url %}</a>{% endif %}</h3>
             <h4 class="profile-position">{{ item.location }}</h4>
           </div>
           <div class="profile-section-details">
@@ -119,12 +121,12 @@ profile: true
       <h3 class="profile-section-title"><i class="fa fa-lg fa-code"></i><span>Skills</span></h3>
 
       <div class="profile-section-content">
-        <p>{{ sectionData.text | markdownify }}</p>
+        {{ sectionData.text | markdownify }}
       </div>
 
     </section>
 
-    {% if site.data.resume.interests.text | size > 0 %}
+    {% if site.data.resume.interests.text and site.data.resume.interests.text != blank %}
      <section class="profile-interests">
       {% assign sectionData = site.data.resume.interests %}
       <h3 class="profile-section-title"><i class="fa fa-lg fa-smile-o"></i><span>Interests</span></h3>

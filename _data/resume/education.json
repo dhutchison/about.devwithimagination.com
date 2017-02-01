@@ -6,7 +6,9 @@
 	},
 	{
 		"location" : "Oracle Certified Professional",
-		"qualification" : "[Java SE 6 Programmer](https://www.youracclaim.com/badges/7824337c-60ad-4ebd-8f0d-596589de3921/public_url \"Acclaim badge\")",
+		"qualification" : "Java SE 6 Programmer",
+		"url" : "https://www.youracclaim.com/badges/7824337c-60ad-4ebd-8f0d-596589de3921/public_url", 
+		"urlalt":  "Acclaim badge",
 		"when" : "2012"
 	}, 
 	{

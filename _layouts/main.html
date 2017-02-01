@@ -1,11 +1,11 @@
 ---
-layout: compress
+notlayout: compress
 ---
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{page.title}} | {{ site.name }}</title>
         <meta name="viewport" content="width=device-width">
 
@@ -38,9 +38,6 @@ layout: compress
         })();
         
         </script>
-        <noscript>
-            <p><img src="https://apps.devwithimagination.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p>
-        </noscript>
         <!-- End Piwik Code -->
         {% endunless %}
         
@@ -52,8 +49,8 @@ layout: compress
             {% endfor %}
         {% endif %}
         
-        <!-- Markup for Twitter Cards / Open Meta -->
-        {% include share_support %}
+        <!-- SEO content -->
+        <!--{ % seo title=false % }-->
         
         
         <!-- Make older versions of IE understand HTML5 tags -->
@@ -103,7 +100,6 @@ layout: compress
                                 {% if site.data.author.david.email %}<li><a href="mailto:{{ site.data.author.david.email }}"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
                                   </li>{% endif %}
                                 <li><a href="http://www.devwithimagination.com/feed.xml"><i class="fa fa-rss fa-lg fa-fw"></i></a></li>  
-                            </p>
                           </ul>
                         </aside>
                       </div>
@@ -117,8 +113,13 @@ layout: compress
               	  &copy; David Hutchison 2013 - {{ site.time | date: "%Y" }}
               	</p>
               </section>
-            </div>
+            
             </footer>
+            </div>
         </div> <!-- /container -->
+
+        <noscript>
+            <p><img src="https://apps.devwithimagination.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p>
+        </noscript>
     </body>
 </html>
