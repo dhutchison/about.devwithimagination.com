@@ -5,5 +5,5 @@ phases:
       bundle update && bundle exec jekyll build 
 
 artifacts:
-  files:
-    - _site/*
+  files: **/*
+  base-directory: _site
