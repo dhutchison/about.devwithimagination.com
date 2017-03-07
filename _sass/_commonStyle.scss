@@ -93,7 +93,7 @@ $horizontalSpacing: 2em;
     @font-face {
         font-family: 'League Gothic';
         src: url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.eot");
-        src: local('☺'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.woff") format('woff'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.ttf") format('truetype'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.svg") format('svg');
+        src: local('League Gothic'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.woff") format('woff'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.ttf") format('truetype'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.svg") format('svg');
         font-weight: normal;
         font-style: normal;
     }
