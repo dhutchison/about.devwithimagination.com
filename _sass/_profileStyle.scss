@@ -11,19 +11,6 @@ $profileSectionHeaderBackgroundTwo: #BE43E8;
 $profileSectionHeaderBackgroundThree: #FF5E3D;
 $profileSectionHeaderBackgroundFour: #E8B943;
 
-// Author styling
-.author {
-    
-    a.profile-image {
-	    float:left;
-    	width: 80px;
-    	
-        @include respond-to(handhelds) {
-            width: 40px;
-        };
-    }
-}
-
 .footer .author header {
     margin-right: 0.5em;
 }

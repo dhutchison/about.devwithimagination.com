@@ -30,9 +30,6 @@ $mainFontPrintColour: #000000;
 
 $mainHeaderLeftGradient: #5D83C4;
 
-$headerHeight: 6em;
-
-
 $lineHeight: 1.5;
 $lineHeightEM: #{$lineHeight}em;
 
@@ -52,9 +49,6 @@ $contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $contentPrintFonts: $titlePrintFonts;
 $contentFontWeight: 300;
 $contentPrintFontWeight: normal;
-
-$categoryTagColour: #E82C0C;
-$tagColour: #0089e0;
 
 $fontSizeTitle: 6em;
 $fontSizeTitleMobile: 5em;
@@ -162,46 +156,6 @@ $horizontalSpacing: 2em;
     background-position: 0px ($size / 4); 
     padding-left: ($size + ($size / 4)); 
 }
-
-@mixin sitePadding() {
-	padding: $verticalSpacing $horizontalSpacing;
-	
-	@include respond-to(handhelds) {
-	    padding: $verticalSpacing;
-	};
-}
-
-@mixin siteLeftPadding() {
-	padding-left: $horizontalSpacing;
-    
-    @include respond-to(handhelds) {
-	    padding-left: 0;
-	};
-}
-
-@mixin siteRightPadding() {
-	padding-right: $horizontalSpacing;
-    
-    @include respond-to(handhelds) {
-	    padding-right: 0;
-	};
-}
-
-@mixin siteLeftMargin() {
-	margin-left: $horizontalSpacing;
-    
-    @include respond-to(handhelds) {
-	    margin-left: 0px;
-	};
-}
-
-@mixin siteRightMargin() {
-	margin-right: $horizontalSpacing;
-	
-	@include respond-to(handhelds) {
-	    margin-right: 0px;
-	};
-}   
 
 @mixin siteMargin() {
     margin-right: auto;
