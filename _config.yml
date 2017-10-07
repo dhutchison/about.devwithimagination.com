@@ -14,7 +14,7 @@ timezone: Europe/London
 permalink: /:year/:month/:day/:title/
 relative_permalinks: false
 
-gems:
+plugins:
 - jekyll-seo-tag
 
 excerpt_separator: <!--more-->
