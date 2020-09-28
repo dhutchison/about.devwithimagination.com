@@ -21,10 +21,8 @@ body {
     };
 
     @include mobileSize(font-size, $fontSizeStandard, $fontSizeSmaller, $fontSizeSmallest);
-
-	text-align: center;
 	
-        /* Carbon fibre 
+    /* Carbon fibre 
      * by Atle Mo (design), Lea Verou (code)
      * from http://lea.verou.me/css3patterns/#carbon-fibre */
     background:
@@ -118,6 +116,8 @@ table {
 
 .footer {
     @extend .heading;
+
+    text-align: center;
 }
 
 .rss {
@@ -141,15 +141,13 @@ table {
         };
     	
     	/* Sizing */
-    	@include mobileSize(width, $widthStandard, $widthSmaller, $widthSmallest);
-
     	padding-bottom: 0;
         @include respond-to(handhelds) {
             padding-top: 1em;
         };
-
-   		@include siteMargin();
         
+        margin: 5vh 2vw;
+
         h2 {
     		font-family: $headerFonts;
     		text-align: left;    
@@ -159,139 +157,6 @@ table {
             };
         }
     
-        hr {
-        	border: 0;
-        	height: 0;
-        	border-top: 1px solid rgba(0, 0, 0, 0.1);
-        	border-bottom: 1px solid fadeout($dividerColour, 40%);
-        	margin-top: 1em;
-            margin-bottom: 1em; 
-        }
-    
-    	.header {
-
-            background-color: $backgroundColour;
-
-    		font-family: $headerFonts;
-    		text-align: center;
-
-            position: inherit;
-            height: auto;
-
-            top: 0;
-            z-index: 100000;
-
-            @include remSize(padding-bottom, 1);
-
-            @include respond-to(print) {
-                font-family: $headerPrintFonts;
-            };
-    		
-    		h1.title {
-                margin-bottom: 0.25em;
-    			color: $mainHeaderColour;
-
-                font-family: $titleFonts;
-                font-weight: $titleFontWeight;
-
-                @include respond-to(print) {
-                    font-family: $titlePrintFonts;
-                    font-weight: $titlePrintFontWeight;
-                };
-
-                font-size: $fontSizeTitle;
-                @include respond-to(handhelds) {
-                   font-size: $fontSizeTitleMobile;
-                };
-
-                a:hover {
-                    color: $dividerColour;
-                }
-
-
-                margin-top: 0;
-    		}
-    		
-    		#nav {
-                ul {
-                    margin: 0;
-                }
-    		    li {
-    		        display: inline;
-
-                    .rss {
-                        left: 0;
-                    }
-    		    }
-
-                .fa-li, .fa-li.fa-lg {
-                    left: 0;
-                    position: static;
-                    margin-left: -0.5em;
-                }
-    		}
-    		
-    		.links {
-    		    width: 100%;
-    		    font-weight: $contentFontWeight;
-                @include remSize(font-size, 1.2);
-    		
-                display: inline-block;
-                text-align: center;
-    
-    			ul {
-    				list-style-type: none;
-    				
-    				li {
-    					display: inline;
-    					
-    					a {
-    						text-decoration: none;
-                            position: relative;
-    					}
-    					
-    					a:hover {
-    						text-decoration: underline;
-    					}
-    				}
-
-                    li + li:before {
-                        content: " | ";
-                        padding-top: 0;
-                        padding-bottom: 0;
-                        @include mobileSize(padding-left, 10px, 10px, 5px);
-                        @include mobileSize(padding-right, 10px, 10px, 5px);
-                    }
-    			}
-    		}
-    	}
-    	
-    	.content {
-            margin-top: 0;
-
-            h2 {
-                .meta {
-                    @include remSize(font-size, 1);
-                }
-            }
-
-    		
-    		.pagination {
-    		    text-align: center;
-    		    
-    		    ul {
-    		        list-style:none; 
-        		    
-    	    	    
-    	    	    li{
-                        display: inline-block;
-                        margin-right: 1em;
-    	    	    }
-    	    	    
-    		    }    		    
-    		}
-    	}
-    	
     	.footer {
     	    	        
    	        font-size: 0.8em;

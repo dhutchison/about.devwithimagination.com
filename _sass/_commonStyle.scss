@@ -60,10 +60,6 @@ $fontSizeTitlePrint: 32pt;
 $fontSizeLargePrint: 16pt;
 $fontSizeStandardPrint: 12pt;
 
-$widthStandard: 60%;
-$widthSmaller: 80%;
-$widthSmallest: 100%;
-
 $verticalSpacing: 1em;
 $horizontalSpacing: 2em;
 
@@ -147,25 +143,6 @@ $horizontalSpacing: 2em;
     }
         
 }
-
-@mixin liImage($image, $size: 16px) {
-    list-style: none;
-    background-image: $image;
-    background-size: $size; 
-    background-repeat: no-repeat;
-    background-position: 0px ($size / 4); 
-    padding-left: ($size + ($size / 4)); 
-}
-
-@mixin siteMargin() {
-    margin-right: auto;
-    margin-left: auto;
-
-    @include respond-to(handhelds) {
-        margin-right: 0;
-        margin-left: 0;
-    };
-} 
 
 @mixin clear {
     clear: both;
