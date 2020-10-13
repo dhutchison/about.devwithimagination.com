@@ -1,3 +1,48 @@
+/* Icon bouncing logic. 
+ * Thanks to @gubi and this gist
+ */ 
+ .fa-bounce {
+  display: inline-block;
+  position: relative;
+  -moz-animation: bounce 1s infinite linear;
+  -o-animation: bounce 1s infinite linear;
+  -webkit-animation: bounce 1s infinite linear;
+  animation: bounce 1s infinite linear;
+}
+
+@-webkit-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-moz-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-o-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-ms-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+
+
+
 /* Particle animation logic
  * Thanks to Alexi Taylor & this codepen for 
  * some of this logic https://codepen.io/alexitaylor/pen/RgxJwg 
@@ -88,14 +133,13 @@
 
     h2 {
         text-align: center;
+        font-weight: 400;
     }
 
     .about-child {
         scroll-snap-align: start;
 
         height: 100vh;
-        width: 100vw;
-
     }
 
     #about-detail {
@@ -103,6 +147,30 @@
         box-sizing: border-box;
 
         padding: 2em;
+
+        display: grid;
+
+        grid-auto-rows: minmax(3rem, auto);
+        column-gap: 1em;
+        row-gap: 1em;
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "summary summary summary"
+            "blog email cv"
+    }
+
+    .about-summary {
+      grid-area: summary;
+    }
+    .about-detail-blog {
+      grid-area: blog;
+    }
+    .about-detail-email {
+      grid-area: email;
+    }
+    .about-detail-cv {
+      grid-area: cv;
     }
 
     #about-header-container {
@@ -129,22 +197,9 @@
         margin: 0 auto;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        .site-title {
-          font-size: 50px;
-          display: block;
-          line-height: 1;
-          color: #FFF;
-          @media only screen and (min-width:$cut){
-            margin: 0;
-            font-size: 76px;
-          }
-        }
+        
         .site-description {
           font-size: 20px;
-          display: block;
-          line-height: 1;
-          color: #FFF;
-          margin-top: 10px;
           @media only screen and (min-width:$cut){
             font-size: 34px;
           }
@@ -171,22 +226,13 @@
         align-items: center;
       
         text-align: center;
-        a {
-          // no borders
-          outline: 0 !important;
-          border: none !important;
-          outline-style: none !important;
-          -moz-outline-style: none !important;
-      
-          padding: 0;
-          margin: 0;
-        }
+        
         .icon {
           text-align: center;
           color: #FFF;
-          width: 20px;
-          height: 20px;
-          font-size: 20px;
+          width: 2em;
+          height: 2em;
+          font-size: 2em;
           padding: 10px;
           margin: 5px;
           border-radius: 50%;
@@ -210,76 +256,26 @@
       }
       
       .down {
-        color: #FFF;
         position: absolute;
         bottom: 25px;
         width: 100%;
-        margin: 0 auto;
-        display: block;
-        text-align: center;
-        font-size: 30px;
-        line-height: 30px;
-        cursor: pointer;
-        // no borders
-        outline: 0 !important;
-        border: none !important;
-        outline-style: none !important;
-        -moz-outline-style: none !important;
-        .icon {
-            position: absolute;
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            fill: #fff;
-            -webkit-animation: pulse 1.3s infinite;
-            animation: pulse 1.3s infinite;
-            &:hover {
-              color: $sec;
-            }
-            &:active {
-              color: $sec;
-            }
-        }
-      }
 
-      #about {
-        font-size: 120%;
+        text-align: center;
+        font-size: 2em;
+        line-height: 2em;
+
+        a {
+          color: #FFF;
         
-        width: 90%;
-        margin: 0 auto;
-        max-width: 960px;
-        @media only screen and (min-width: $cut) {
-          width: 80%;
+          &:hover, &:active {
+            color: $sec;
+          }
         }
       }
       
       .about-detail-link-child {
-        margin: 10px;
-        flex: 1 1 0;
-        h2, h3 {
-          font-weight: 400;
-        }
-      }
-      
-      .about-detail-link-container {
+        margin: 1em;
         text-align: center;
-        font-size: 60px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        p {
-          font-size: 16px;
-        }
-        @media only screen and (min-width: $cut) {
-          flex-wrap: nowrap;
-          font-size: 75px;
-        }
       }
       
       .about-summary {

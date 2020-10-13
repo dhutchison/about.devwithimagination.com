@@ -37,7 +37,7 @@ $linkColour: $mainFontColour;
 $linkHoverColour: $dividerColour;
 
 
-$titleFonts: 'League Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$titleFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $titlePrintFonts: Helvetica;
 $titleFontWeight: normal;
 $titlePrintFontWeight: normal;
@@ -69,15 +69,6 @@ $horizontalSpacing: 2em;
 @mixin fonts() {
     /* Font Definitions */
     @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,700');
-    
-    $lg-font-path: '/assets/fonts/league-gothic';
-    @font-face {
-        font-family: 'League Gothic';
-        src: url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.eot");
-        src: local('League Gothic'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.woff") format('woff'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.ttf") format('truetype'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.svg") format('svg');
-        font-weight: normal;
-        font-style: normal;
-    }
 }
 
 
