@@ -1,241 +1,141 @@
 ---
+layout: default
 ---
-<!DOCTYPE html>
-<html lang="en">
+  <div class="site">
+    <article class="resume">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{page.title}} | {{ site.name }}</title>
-  <meta name="viewport" content="width=device-width">
+      <section class="name">
+        {% assign sectionData = site.data.resume.info %}
+        <h1 class="profile-name">{{ sectionData.name }}</h2>
+          <h2 class="profile-position">{{ sectionData.position }}</h2>
+      </section>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/main.css">
+      <section class="photo">
+        {% assign sectionData = site.data.resume.info %}
+        <img class="profile-image" src="{{ sectionData.image }}" alt="{{ sectionData.name }}">
+      </section>
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.ico" />
-
-  {% if page.headIncludes %}
-  <!-- other includes from pages -->
-  {% for inc in page.headIncludes %}
-  {{ inc }}
-  {% endfor %}
-  {% endif %}
-
-  {% unless site.data.dev %}
-  <!-- Analytics -->
-  <!-- Piwik -->
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-42459612-3', 'auto');
-    ga('send', 'pageview');
-
-  </script>
-  {% endunless %}
-
-  <!-- Keywords -->
-  {% if page.keywords %}
-  <meta name="keywords" content="{{ page.keywords | join:' ' }}">
-  {% for keyword in page.keywords %}
-  <meta property="article:tag" content="{{ keyword }}">
-  {% endfor %}
-  {% endif %}
-
-  <!-- SEO content -->
-  <!--{ % seo title=false % }-->
-
-
-  <!-- Make older versions of IE understand HTML5 tags -->
-  <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
-</head>
-
-<body>
-
-  <div class="container">
-    <div class="site">
-
-      <article class="resume">
-
-        <section class="name">
-          {% assign sectionData = site.data.resume.info %}
-          <h1 class="profile-name">{{ sectionData.name }}</h2>
-            <h2 class="profile-position">{{ sectionData.position }}</h2>
-        </section>
-
-        <section class="photo">
-          {% assign sectionData = site.data.resume.info %}
-          <img class="profile-image" src="{{ sectionData.image }}" alt="{{ sectionData.name }}">
-        </section>
-
-        <section class="contact">
-          {% assign sectionData = site.data.resume.info %}
-          <div class="profile-section-details">
-            {% if sectionData.phone %}
-            <div class="profile-phone">
-              <span class="profile-icon fa-stack">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="profile-field">Phone: </span><a
-                href="tel:{{ sectionData.phone | replace: ' ', '' }}">{{ sectionData.phone }}</a></div>{% endif %}
-            {% if sectionData.email %}
-            <div class="profile-email">
-              <span class="profile-icon fa-stack">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="profile-field">Email: </span><a
-                href="mailto:{{ sectionData.email }}">{{ sectionData.email }}</a></div>
-            {% endif %}
-            {% if sectionData.website_link %}
-            <div class="profile-www">
-              <span class="profile-icon fa-stack">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-link fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="profile-field">Blog: </span><a
-                href="{{ sectionData.website_link }}">{{ sectionData.website_display }}</a></div>
-            {% endif %}
-          </div>
-
-        </section>
-
-        <section class="about profile-about">
-          {% assign sectionData = site.data.resume.info %}
-          <h3 class="profile-section-title">
-            <i class="fa fa-lg fa-info-circle"></i>
-            <span>About</span>
-          </h3>
-
-          <div class="profile-section-content">
-            <p>{{ sectionData.text }}</p>
-          </div>
-        </section>
-
-        <section class="work profile-employment">
-          {% assign sectionData = site.data.resume.experience %}
-          <h3 class="profile-section-title">
-            <i class="fas fa-lg fa-chart-line"></i>
-            <span>Employment</span>
-          </h3>
-
-          {% for item in sectionData %}
-
-          <div class="profile-employment-item">
-            <div class="profile-section-header">
-              <div class="profile-section-name">
-                <h3 class="profile-name">{{ item.where }}</h3>
-
-                {% for role in item.roles %}
-                <h4 class="profile-position">{{ role.title }}</h4>
-                <div class="profile-section-details">
-                  <div class="profile-when">{{ role.when }}</div>
-                </div>
-                {% endfor %}
-
-              </div>
-
-            </div>
-
-            <div class="profile-section-content">
-              {{ item.text | markdownify }}
-            </div>
-          </div>
-
-          {% endfor %}
-        </section>
-
-        <section class="education profile-education">
-          {% assign sectionData = site.data.resume.education %}
-          <h3 class="profile-section-title">
-            <i class="fas fa-lg fa-graduation-cap"></i>
-            <span>Education</span>
-          </h3>
-
-          {% for item in sectionData %}
-
-          <div class="profile-education-item">
-            <div class="profile-section-header">
-              <div class="profile-section-name">
-                <h3 class="profile-name">{% if item.url %} <a href="{{ item.url }}" {% if item.urlalt %}
-                    alt="{{ item.urlalt }}"
-                    {% endif %}>{% endif %}{{ item.qualification }}{% if item.url %}</a>{% endif %}</h3>
-                <h4 class="profile-position">{{ item.location }}</h4>
-              </div>
-              <div class="profile-section-details">
-                <div class="profile-when">
-                  {% if item.when %}{{ item.when }}{% endif %}
-                  {% if item.when_from %}<span class="profile-when-from">{{ item.when_from }}</span> &mdash;
-                  <span class="profile-when-to">{{ item.when_to }}</span>{% endif %}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {% endfor %}
-        </section>
-
-        <section class="community"></section>
-
-        <section class="skills profile-skills">
-          {% assign sectionData = site.data.resume.skills %}
-          <h3 class="profile-section-title">
-            <i class="fa fa-lg fa-code"></i>
-            <span>Skills</span>
-          </h3>
-
-          <div class="profile-section-content">
-            {{ sectionData.text | markdownify }}
-          </div>
-        </section>
-
-      </article>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <section class="author">
-      <article>
-        <div class="author-details">
-          <!-- Links -->
-          <aside class="author-links">
-            <ul class="social">
-              {% if site.data.author.david.github %}<li>
-                <a href="http://github.com/{{ site.data.author.david.github }}/"><i
-                    class="fab fa-github fa-lg fa-fw"></i></a>
-              </li>{% endif %}
-              {% if site.data.author.david.stackoverflow %}<li>
-                <a href="http://stackoverflow.com/users/{{ site.data.author.david.stackoverflow }}/"><i
-                    class="fab fa-stack-overflow fa-lg fa-fw"></i></a>
-              </li>{% endif %}
-              {% if site.data.author.david.twitter %}<li>
-                <a href="http://twitter.com/{{ site.data.author.david.twitter }}/"><i
-                    class="fab fa-twitter fa-lg fa-fw"></i></a>
-              </li>{% endif %}
-              {% if site.data.author.david.email %}<li><a href="mailto:{{ site.data.author.david.email }}"><i
-                    class="fa fa-envelope fa-lg fa-fw"></i></a>
-              </li>{% endif %}
-              <li><a href="https://www.devwithimagination.com/feed.xml"><i class="fa fa-rss fa-lg fa-fw"></i></a></li>
-            </ul>
-          </aside>
+      <section class="contact profile-information">
+        {% assign sectionData = site.data.resume.info %}
+        <div class="profile-section-details">
+          {% if sectionData.phone %}
+          <div class="profile-phone">
+            <span class="profile-icon fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="profile-field">Phone: </span><a
+              href="tel:{{ sectionData.phone | replace: ' ', '' }}">{{ sectionData.phone }}</a></div>{% endif %}
+          {% if sectionData.email %}
+          <div class="profile-email">
+            <span class="profile-icon fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="profile-field">Email: </span><a
+              href="mailto:{{ sectionData.email }}">{{ sectionData.email }}</a></div>
+          {% endif %}
+          {% if sectionData.website_link %}
+          <div class="profile-www">
+            <span class="profile-icon fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="profile-field">Blog: </span><a
+              href="{{ sectionData.website_link }}">{{ sectionData.website_display }}</a></div>
+          {% endif %}
         </div>
-      </article>
-    </section>
-    <section class="copy">
-      <p>
-        &copy; David Hutchison 2013 - {{ site.time | date: "%Y" }}
-      </p>
-    </section>
 
-  </footer>
+      </section>
 
-</body>
+      <section class="about profile-about">
+        {% assign sectionData = site.data.resume.info %}
+        <h3 class="profile-section-title">
+          <i class="fa fa-lg fa-info-circle"></i>
+          <span>About</span>
+        </h3>
+
+        <div class="profile-section-content">
+          <p>{{ sectionData.text }}</p>
+        </div>
+      </section>
+
+      <section class="work profile-employment">
+        {% assign sectionData = site.data.resume.experience %}
+        <h3 class="profile-section-title">
+          <i class="fas fa-lg fa-chart-line"></i>
+          <span>Employment</span>
+        </h3>
+
+        {% for item in sectionData %}
+
+        <div class="profile-employment-item">
+          <div class="profile-section-header">
+            <div class="profile-section-name">
+              <h3 class="profile-name">{{ item.where }}</h3>
+
+              {% for role in item.roles %}
+              <h4 class="profile-position">{{ role.title }}</h4>
+              <div class="profile-section-details">
+                <div class="profile-when">{{ role.when }}</div>
+              </div>
+              {% endfor %}
+
+            </div>
+
+          </div>
+
+          <div class="profile-section-content">
+            {{ item.text | markdownify }}
+          </div>
+        </div>
+
+        {% endfor %}
+      </section>
+
+      <section class="education profile-education">
+        {% assign sectionData = site.data.resume.education %}
+        <h3 class="profile-section-title">
+          <i class="fas fa-lg fa-graduation-cap"></i>
+          <span>Education</span>
+        </h3>
+
+        {% for item in sectionData %}
+
+        <div class="profile-education-item">
+          <div class="profile-section-header">
+            <div class="profile-section-name">
+              <h3 class="profile-name">{% if item.url %} <a href="{{ item.url }}" {% if item.urlalt %}
+                  alt="{{ item.urlalt }}"
+                  {% endif %}>{% endif %}{{ item.qualification }}{% if item.url %}</a>{% endif %}</h3>
+              <h4 class="profile-position">{{ item.location }}</h4>
+            </div>
+            <div class="profile-section-details">
+              <div class="profile-when">
+                {% if item.when %}{{ item.when }}{% endif %}
+                {% if item.when_from %}<span class="profile-when-from">{{ item.when_from }}</span> &mdash;
+                <span class="profile-when-to">{{ item.when_to }}</span>{% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+      </section>
+
+      <section class="community"></section>
+
+      <section class="skills profile-skills">
+        {% assign sectionData = site.data.resume.skills %}
+        <h3 class="profile-section-title">
+          <i class="fa fa-lg fa-code"></i>
+          <span>Skills</span>
+        </h3>
+
+        <div class="profile-section-content">
+          {{ sectionData.text | markdownify }}
+        </div>
+      </section>
+
+    </article>
+  </div>

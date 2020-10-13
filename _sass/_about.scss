@@ -1,0 +1,293 @@
+/* Particle animation logic
+ * Thanks to Alexi Taylor & this codepen for 
+ * some of this logic https://codepen.io/alexitaylor/pen/RgxJwg 
+ */
+
+/* mixins */
+@function particles($max) {
+  $val: 0px 0px $particle-colour;
+  @for $i from 1 through $max {
+    $val: #{$val}, random($particle-spacing)+px random($particle-spacing)+px $particle-colour;
+  }
+  @return $val;
+}
+
+@mixin particles($max) {
+  box-shadow: particles($max);
+  border-radius: 50%;
+}
+
+.particle, .particle:after {
+  background: transparent;
+}
+
+.particle:after {
+  position: absolute;
+  content: "";
+  top: $particle-spacing;
+}
+
+.particle-1 {
+  animation: animParticle $particle-timing-1 linear infinite;
+  @include particles(1000);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-1:after {
+  @include particles(900);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2 {
+  animation: animParticle $particle-timing-2 linear infinite;
+  @include particles(800);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2:after {
+  @include particles(500);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-3 {
+  animation: animParticle $particle-timing-3 linear infinite;
+  @include particles(1200);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-3:after {
+  @include particles(700);
+  height: 1px;
+  width: 1px;
+}
+
+@keyframes animParticle {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY($particle-spacing * -1);
+  }
+}
+
+
+/* Main page content */
+.about-container {
+
+    height: 100%;
+    box-sizing: border-box;
+
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+
+    h2 {
+        text-align: center;
+    }
+
+    .about-child {
+        scroll-snap-align: start;
+
+        height: 100vh;
+        width: 100vw;
+
+    }
+
+    #about-detail {
+        background-color: white;
+        box-sizing: border-box;
+
+        padding: 2em;
+    }
+
+    #about-header-container {
+        background: $main;
+        display: flex;
+        vertical-align: bottom;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        
+        height: 100vh;
+        overflow: hidden;
+      }
+      
+      .header {
+        font-family: 'Montserrat', sans-serif;
+        z-index: 1;
+        text-align: center;
+        color:#FFF;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0 auto;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        .site-title {
+          font-size: 50px;
+          display: block;
+          line-height: 1;
+          color: #FFF;
+          @media only screen and (min-width:$cut){
+            margin: 0;
+            font-size: 76px;
+          }
+        }
+        .site-description {
+          font-size: 20px;
+          display: block;
+          line-height: 1;
+          color: #FFF;
+          margin-top: 10px;
+          @media only screen and (min-width:$cut){
+            font-size: 34px;
+          }
+        }
+      }
+      
+      .header-links {
+        margin: 10px;
+        z-index: 2;
+        .link {
+          color: #FFF;
+          text-decoration: none;
+          font-size: 15px;
+          margin: 10px;
+          @media only screen and (min-width:$cut){
+            font-size: 20px;
+          }
+        }
+      }
+      
+      .header-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+        text-align: center;
+        a {
+          // no borders
+          outline: 0 !important;
+          border: none !important;
+          outline-style: none !important;
+          -moz-outline-style: none !important;
+      
+          padding: 0;
+          margin: 0;
+        }
+        .icon {
+          text-align: center;
+          color: #FFF;
+          width: 20px;
+          height: 20px;
+          font-size: 20px;
+          padding: 10px;
+          margin: 5px;
+          border-radius: 50%;
+          border: 2px solid #FFF;
+          transition: all .5s;
+          &:hover {
+            color: $main;
+            background: #FFF;
+          }
+          &:active {
+            color: $main;
+            background: #FFF;
+          }
+          @media only screen and (min-width:$cut) {
+            width: 30px;
+            height: 30px;
+            font-size: 30px;
+            line-height: 30px;
+          }
+        }
+      }
+      
+      .down {
+        color: #FFF;
+        position: absolute;
+        bottom: 25px;
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        line-height: 30px;
+        cursor: pointer;
+        // no borders
+        outline: 0 !important;
+        border: none !important;
+        outline-style: none !important;
+        -moz-outline-style: none !important;
+        .icon {
+            position: absolute;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            fill: #fff;
+            -webkit-animation: pulse 1.3s infinite;
+            animation: pulse 1.3s infinite;
+            &:hover {
+              color: $sec;
+            }
+            &:active {
+              color: $sec;
+            }
+        }
+      }
+
+      #about {
+        font-size: 120%;
+        
+        width: 90%;
+        margin: 0 auto;
+        max-width: 960px;
+        @media only screen and (min-width: $cut) {
+          width: 80%;
+        }
+      }
+      
+      .about-detail-link-child {
+        margin: 10px;
+        flex: 1 1 0;
+        h2, h3 {
+          font-weight: 400;
+        }
+      }
+      
+      .about-detail-link-container {
+        text-align: center;
+        font-size: 60px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        p {
+          font-size: 16px;
+        }
+        @media only screen and (min-width: $cut) {
+          flex-wrap: nowrap;
+          font-size: 75px;
+        }
+      }
+      
+      .about-summary {
+        text-align: center;
+        margin: 5px auto;
+        h1 {
+          font-weight: 400;
+        }
+      }
+
+}

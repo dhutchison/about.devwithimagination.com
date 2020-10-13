@@ -17,7 +17,7 @@ $backgroundBlue: #5D83C4;
 $dividerColour: #5D83C4;
 
 $headerBackgroundDarkBlue: #212E45; 
-$headerFontColour: #DDDDDD;
+// $headerFontColour: #DDDDDD;
 $headerLinkHoverColour: $backgroundBlue;
 
 $mainHeaderColour: #475261;
@@ -66,18 +66,9 @@ $horizontalSpacing: 2em;
 ///////////////////
 // Common Mixins //
 ///////////////////
-@mixin reset() {
-    * {
-    	margin: 0;
-    	padding: 0;
-    }
-}
-
-
-
 @mixin fonts() {
     /* Font Definitions */
-    @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
+    @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,700');
     
     $lg-font-path: '/assets/fonts/league-gothic';
     @font-face {
@@ -142,8 +133,4 @@ $horizontalSpacing: 2em;
         @content
     }
         
-}
-
-@mixin clear {
-    clear: both;
 }

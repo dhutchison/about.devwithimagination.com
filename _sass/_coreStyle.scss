@@ -6,9 +6,14 @@
 @include fonts();
 
 /* Global Reset */
-@include reset();
+* {
+    margin: 0;
+    padding: 0;
+}
 
-html, body { height: 100%; }
+html, body { 
+    height: 100%; 
+}
 
 body {
 	color: $mainFontColour;
@@ -78,50 +83,24 @@ a {
 	}
 }
 
-table {
-	font-size: inherit;
-}
-
 /*****************************************************************************/
 /*
 /* Site
 /*
 /*****************************************************************************/
 
-.heading {
-
-    background-color: $headerBackgroundDarkBlue;
-    padding: 1em 1em 1em 2em;
-
-    @include respond-to(handhelds) {
-        padding-left: 1em;
-    }; 
-
+.footer {
+    // @extend .heading;
+    background-color: $main;
     color: $headerFontColour;
 
-    a {
-        color: $headerFontColour;
-
-        &:hover{
-            color: $headerLinkHoverColour;
-            transition: .5s;
-        }
-    }
+    padding: 1em 1em 1em 2em;
+    text-align: center;
 
     p {
         margin-top: 0;
         margin-bottom: 0;
     }
-}
-
-.footer {
-    @extend .heading;
-
-    text-align: center;
-}
-
-.rss {
-    text-align: center;
 }
 
 .container{
@@ -212,40 +191,8 @@ table {
             }
         }
 
-        .post-footer .share, #disqus_thread, .page-navigation {
-            display: none;
-        }
-
         .author-links {
             display: none;
         }
         
 }
-
-
-/* ==========================================================================
-    3. Utilities - These things get used a lot
-    ========================================================================== */
- 
- /* Hides shit */
- .hidden {
-     text-indent: -9999px;
-     direction: ltr;
-     visibility: hidden;
-     display: none;
- }
- 
- /* Creates a responsive wrapper that makes our content scale nicely */
- .inner {
-     position: relative;
-     width: 80%;
-     max-width: 700px;
-     margin: 0 auto;
- }
- 
- /* Centres vertically yo. (IE8+) */
- .vertical {
-     display: table-cell;
-     vertical-align: middle;
- }
-
