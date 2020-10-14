@@ -197,26 +197,16 @@
         margin: 0 auto;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+
+        h1 {
+          font-size: 4rem;
+        }
         
         .site-description {
-          font-size: 20px;
-          @media only screen and (min-width:$cut){
-            font-size: 34px;
-          }
-        }
-      }
-      
-      .header-links {
-        margin: 10px;
-        z-index: 2;
-        .link {
-          color: #FFF;
-          text-decoration: none;
-          font-size: 15px;
-          margin: 10px;
-          @media only screen and (min-width:$cut){
-            font-size: 20px;
-          }
+          font-size: 2rem;
+
+          margin-top: 2rem;
+          margin-bottom: 2rem;
         }
       }
       
@@ -226,6 +216,9 @@
         align-items: center;
       
         text-align: center;
+
+        margin-top: 2rem;
+        margin-bottom: 2rem;
         
         .icon {
           text-align: center;
