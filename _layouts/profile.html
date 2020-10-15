@@ -20,29 +20,17 @@ layout: default
         <div class="profile-section-details">
           {% if sectionData.phone %}
           <div class="profile-phone">
-            <span class="profile-icon fa-stack">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-            </span>
             <span class="profile-field">Phone: </span><a
-              href="tel:{{ sectionData.phone | replace: ' ', '' }}">{{ sectionData.phone }}</a></div>{% endif %}
+              href="tel:{{ sectionData.phone | replace: ' ', '' }}"><i class="icon fa fa-phone fa-inverse"></i>{{ sectionData.phone }}</a></div>{% endif %}
           {% if sectionData.email %}
           <div class="profile-email">
-            <span class="profile-icon fa-stack">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-            </span>
             <span class="profile-field">Email: </span><a
-              href="mailto:{{ sectionData.email }}">{{ sectionData.email }}</a></div>
+              href="mailto:{{ sectionData.email }}"><i class="icon fa fa-envelope fa-inverse"></i>{{ sectionData.email }}</a></div>
           {% endif %}
           {% if sectionData.website_link %}
           <div class="profile-www">
-            <span class="profile-icon fa-stack">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-link fa-stack-1x fa-inverse"></i>
-            </span>
             <span class="profile-field">Blog: </span><a
-              href="{{ sectionData.website_link }}">{{ sectionData.website_display }}</a></div>
+              href="{{ sectionData.website_link }}"><i class="icon fa fa-link fa-inverse"></i>{{ sectionData.website_display }}</a></div>
           {% endif %}
         </div>
 

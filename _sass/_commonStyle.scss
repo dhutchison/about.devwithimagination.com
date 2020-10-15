@@ -1,14 +1,7 @@
 // Common style information between print and screen
 
 
-// Media query values ************************/
-$mqiPhone: "only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px)";
-$mqHandheld: "only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px)";
- 
-$mqiPad: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) ";
-$mqTablet: "only screen and (min-width : 768px) and (max-width : 1024px) ";
-//Retina add rule and (-webkit-min-device-pixel-ratio: 2)
-//Non-Retina add rule and (-webkit-min-device-pixel-ratio: 1)
+
 
 //
 // Variables 
@@ -37,18 +30,7 @@ $linkColour: $mainFontColour;
 $linkHoverColour: $dividerColour;
 
 
-$titleFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$titlePrintFonts: Helvetica;
-$titleFontWeight: normal;
-$titlePrintFontWeight: normal;
-$headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$headerPrintFonts: $titlePrintFonts;
-$headerFontWeight: 700;
-$headerPrintFontWeight: bold;
-$contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$contentPrintFonts: $titlePrintFonts;
-$contentFontWeight: 300;
-$contentPrintFontWeight: normal;
+
 
 $fontSizeTitle: 6em;
 $fontSizeTitleMobile: 5em;
@@ -66,44 +48,6 @@ $horizontalSpacing: 2em;
 ///////////////////
 // Common Mixins //
 ///////////////////
-@mixin fonts() {
-    /* Font Definitions */
-    @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,700');
-}
-
-
-//Function just for doing mobile sizing. If number and no unit, remsize. otherwise use supplied value
-@mixin mobileSize($property, $sizeValue, $iPadSizeValue: $sizeValue, $iPhoneSizeValue: $sizeValue) {
-    
-    @include remSize($property, $sizeValue, $fontSizeStandard);
-    
-    @if $iPadSizeValue != $sizeValue {
-        @include respond-to(tablets) {
-            @include remSize($property, $iPadSizeValue, $fontSizeSmaller);
-        }
-    }
-
-    @if $iPhoneSizeValue != $sizeValue {
-        @include respond-to(handhelds) {
-            @include remSize($property, $iPhoneSizeValue, $fontSizeSmallest);
-        }
-    }
-}
-
-@mixin remSize($property, $sizeValue, $pxFontSize: $fontSizeStandard) {
-    
-    @if isnumber($sizeValue) and unitless($sizeValue) {    
-        $pxValue: round(($sizeValue * $pxFontSize));
-        @if unitless($pxValue) {       
-            #{$property}: #{$pxValue}px;
-        } @else {
-            #{$property}: #{$pxValue};
-        }
-        #{$property}: #{$sizeValue}rem; 
-    } @else {
-        #{$property}: $sizeValue;
-    }
-}
 
 @mixin respond-to($media) {
     

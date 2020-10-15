@@ -1,3 +1,5 @@
+@import "commonStyle";
+
 /* Icon bouncing logic. 
  * Thanks to @gubi and this gist
  */ 
@@ -49,7 +51,7 @@
  */
 
 /* mixins */
-@function particles($max) {
+@function particles($max, $particle-colour) {
   $val: 0px 0px $particle-colour;
   @for $i from 1 through $max {
     $val: #{$val}, random($particle-spacing)+px random($particle-spacing)+px $particle-colour;
@@ -57,8 +59,8 @@
   @return $val;
 }
 
-@mixin particles($max) {
-  box-shadow: particles($max);
+@mixin particles($max, $particle-colour) {
+  box-shadow: particles($max, $particle-colour);
   border-radius: 50%;
 }
 
@@ -74,39 +76,39 @@
 
 .particle-1 {
   animation: animParticle $particle-timing-1 linear infinite;
-  @include particles(1000);
+  @include particles(1000, $sec);
   height: 2px;
   width: 2px;
 }
 
 .particle-1:after {
-  @include particles(900);
+  @include particles(900, $sec);
   height: 2px;
   width: 2px;
 }
 
 .particle-2 {
   animation: animParticle $particle-timing-2 linear infinite;
-  @include particles(800);
+  @include particles(800, $sec);
   height: 2px;
   width: 2px;
 }
 
 .particle-2:after {
-  @include particles(500);
+  @include particles(500, $sec);
   height: 3px;
   width: 3px;
 }
 
 .particle-3 {
   animation: animParticle $particle-timing-3 linear infinite;
-  @include particles(1200);
+  @include particles(1200, $sec);
   height: 1px;
   width: 1px;
 }
 
 .particle-3:after {
-  @include particles(700);
+  @include particles(700, $sec);
   height: 1px;
   width: 1px;
 }
@@ -133,13 +135,12 @@
 
     h2 {
         text-align: center;
-        font-weight: 400;
     }
 
     .about-child {
         scroll-snap-align: start;
 
-        height: 100vh;
+        min-height: 100vh;
     }
 
     #about-detail {
@@ -157,7 +158,16 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
             "summary summary summary"
-            "blog email cv"
+            "blog email cv";
+
+        @include respond-to(handhelds) {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "summary"
+            "blog"
+            "email"
+            "cv";
+        }
     }
 
     .about-summary {
@@ -187,24 +197,17 @@
       }
       
       .header {
-        font-family: 'Montserrat', sans-serif;
         z-index: 1;
         text-align: center;
-        color:#FFF;
+        color: $mainBackgroundColour;
         position: absolute;
         top: 50%;
         left: 50%;
         margin: 0 auto;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-
-        h1 {
-          font-size: 4rem;
-        }
         
         .site-description {
-          font-size: 2rem;
-
           margin-top: 2rem;
           margin-bottom: 2rem;
         }
@@ -221,29 +224,18 @@
         margin-bottom: 2rem;
         
         .icon {
-          text-align: center;
-          color: #FFF;
-          width: 2em;
-          height: 2em;
-          font-size: 2em;
-          padding: 10px;
-          margin: 5px;
-          border-radius: 50%;
-          border: 2px solid #FFF;
-          transition: all .5s;
+          color: $mainBackgroundColour;
+          border-color: $mainBackgroundColour;
+
+          font-size: 2rem;
+
           &:hover {
             color: $main;
-            background: #FFF;
+            background: $mainBackgroundColour;
           }
           &:active {
             color: $main;
-            background: #FFF;
-          }
-          @media only screen and (min-width:$cut) {
-            width: 30px;
-            height: 30px;
-            font-size: 30px;
-            line-height: 30px;
+            background: $mainBackgroundColour;
           }
         }
       }
@@ -254,11 +246,11 @@
         width: 100%;
 
         text-align: center;
-        font-size: 2em;
-        line-height: 2em;
+        font-size: 2rem;
+        line-height: 2rem;
 
         a {
-          color: #FFF;
+          color: $mainBackgroundColour;
         
           &:hover, &:active {
             color: $sec;
@@ -274,9 +266,6 @@
       .about-summary {
         text-align: center;
         margin: 5px auto;
-        h1 {
-          font-weight: 400;
-        }
       }
 
 }
