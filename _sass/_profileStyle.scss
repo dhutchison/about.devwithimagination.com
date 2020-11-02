@@ -2,21 +2,24 @@
 
 /* Setup the CSS Grid Container */
 .resume {
-    background-color: $mainBackgroundColour;
+    /* As we can't style empty cells, we do this backwards. Set
+     * the main background for the wrapper to what the sidebar should be,
+     * and set the other cells back to the main background later */
+    background-color: $tri;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
 
     display: grid;
-    // grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-auto-rows: minmax(3rem, auto);
-    column-gap: 1rem;
-    row-gap: 1rem;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(3rem, auto);
+
+    grid-template-columns: auto minmax(20rem, 25%);
     grid-template-areas:
-        "name name photo"
-        "contact contact contact"
-        "about work work"
-        "education work work"
-        "skills work work";
+        "about photo"
+        "about name"
+        "work contact"
+        "work education"
+        "work skills"
+        "work .";
 
     @include respond-to(handhelds) {
         grid-template-columns: 1fr;
@@ -24,36 +27,44 @@
             "photo"
             "name"
             "contact"
-            "about"
-            "work"
             "education"
-            "skills";
+            "about"
+            "skills"
+            "work";
     }
 
     @include respond-to(print) {
-        grid-template-areas:
-            "name photo"
-            "contact contact"
-            "about about"
-            "work work"
-            "education education"
-            "skills skills";
 
+        grid-template-areas:
+        "about photo"
+        "about name"
+        "about contact"
+        "skills education"
+        "work work";
+
+        box-shadow: none;
     }
 }
 
 /* Setup named grid areas */
 .name {
     grid-area: name;
-
-    margin: 2rem;
+    
+    h1, h2 {
+        text-align: center;
+    }
 
     h1 {
-        color: $mainHeaderColour;
+        color: $mainBackgroundColour;
+
+        font-size: 2rem;
     }
 
     h2 {
-        color: $main;
+        // color: $main;
+        color: $headerFontColour;
+
+        font-size: 1rem;
     }
 
 
@@ -68,33 +79,38 @@
     justify-content: center;
     text-align: center;
 
+    padding-top: 1rem;
+
+
     img.profile-image {
-        width:80px;
-        height:80px;
-        border-radius: 50px;
-        
-        @include respond-to(handhelds) {
-            border-radius: 25px;
-        };
-        
-        /* Make the image greyscale until it is hovered over */
-        filter: grayscale(1);
-        transition: all ease 0.7s;
-    
-        &:hover {
-            filter: grayscale(0);
-        }
+        width: 10rem;
+        height: 10rem;
+        border-radius: 5rem;
     }
 }
 
 .contact {
     grid-area: contact;
 
-    display: flex;
-    // flex-direction: column;
-    justify-content: center;
-    // text-align: center;
-    text-align: center;
+    .icon {
+        border: 0;
+        color: $mainBackgroundColour;
+
+        &:hover, &:active {
+            border: 0;
+            background-color: inherit;
+            color: inherit;
+        }
+    }
+
+    a {
+        color: $mainBackgroundColour;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .about {
@@ -109,23 +125,71 @@
     grid-area: education;
 }
 
-.community {
-    grid-area: community;
-}
-
 .skills {
     grid-area: skills;
+
+    /* top right bottom left */
+    padding: 1rem 1rem 0 1rem;
+
+    @include respond-to(print) {
+        padding: 1rem 2rem 0 3rem;
+    }
+}
+
+.name, .photo {
+    background-color: $sec;
+
+    padding-bottom: 1rem;
+}
+
+.about, .work {
+    background-color: $mainBackgroundColour;
+}
+
+.contact, .education {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.contact, .education, .skills {
+    background-color: $tri;
+    color: $mainBackgroundColour;
+
+    @include respond-to(handhelds) {
+        padding: 2rem 2rem 0;
+    }
+
+    .profile-section-title, .profile-name, .profile-name a {
+        color: $mainBackgroundColour;
+        text-decoration: none;
+    }
+
+    .profile-name a:hover {
+        text-decoration: underline;
+    }
+
+    // .profile-position, .profile-when {
+    //     color: $headerFontColour;
+    // }
+}
+
+.about, .work {
+    padding: 3rem 3rem 0 3rem;
+
+    @include respond-to(handhelds) {
+        padding: 2rem 2rem 0;
+    }
+
+    @include respond-to(print) {
+        padding: 3rem 2rem 0 3rem;
+    }
+}
+
+.profile-education-item p {
+    margin: 0;
 }
 
 
 .profile-section-header {
-    overflow: hidden;
-    
-    text-align: center;
-
-    padding-top: $verticalSpacing;
-    padding-left: $horizontalSpacing;
-    padding-right: $horizontalSpacing;
     margin-bottom: $verticalSpacing;
 }
 
@@ -135,24 +199,36 @@
     }
 }
 
+.employment-position {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    .profile-section-details {
+        text-align: right;
+    }
+}
+
+.profile-employment {
+    .profile-when, .employment-company {
+        font-size: 0.8rem;
+    }
+}
+
 .profile-section-title {
     display: block;
 
     position: relative;
     line-height: 3em;
-    text-align: center;
+    text-align: left;
+    text-transform: uppercase;
 
-    color: $backgroundColour;
-    background-color: $sec;
-
-    span {
-        z-index: 1;
-    }
+    color: $sec;
 
     $iconFontSize: $horizontalSpacing;
     i {
         position: inherit;
-        display: block;
+        display: inline;
         width: 100%;
         left: 0;
         padding: 0;
@@ -160,13 +236,6 @@
         background-color: inherit;
         height: 100%;
         z-index: 0;
-    }
-
-    .fa-lg {
-        font-size: $iconFontSize;
-
-        line-height: 0.75em;
-        padding-top: 0.5em;
     }
 }
 
@@ -187,23 +256,7 @@
     
 }
 
-
-.profile-information .icon {
-    color: $main;
-    border-color: $main;
-
-    &:hover {
-        color: $mainBackgroundColour;
-        background: $main;
-    }
-    &:active {
-        color: $mainBackgroundColour;
-        background: $main;
-    }
-}
-
 .profile-section-content {
-    margin: 0 $horizontalSpacing;
 
     li {
         margin-left: $horizontalSpacing
@@ -212,151 +265,12 @@
 
 @include respond-to(print) {
 
-    $horizontalSpacingPrint: 0;//(2 * @fontSizeStandardPrint);
-
-    .profile-section-title {
-        width: auto;
-        height: auto;
-        line-height: inherit;
-
-        margin-bottom: 1em;
-        text-align: left;
-
-        i {
-            display: none;
-        }
-    }
-
-    .profile-section-header {
-
-        padding-left: $horizontalSpacingPrint;
-        padding-right: $horizontalSpacingPrint;
-    }
-
-    .profile-section-title {
-        font-size: $fontSizeLargePrint;
-    }
-
-    .profile-section-header, .profile-section-header h3, .profile-section-header h4, .profile-section-content {
-        font-size: $fontSizeStandardPrint;
-        text-align: left;
-    }
-
-    .profile-employment-item {
-        .profile-section-header, .profile-section-header h3, .profile-section-header h4, .profile-section-details {
-            text-transform: uppercase;
-            font-size: (0.8 * $fontSizeStandardPrint);
-        }
-    }
-
-    .profile-employment-item, .profile-education-item {
-
-        .profile-section-header, .profile-section-header h3, .profile-section-header h4 {
-            font-weight: $contentPrintFontWeight;
-        }
-
-        .profile-section-header {
-            padding-top: 0;
-
-            h3, h4 {
-                display: inline-block;  
-            }
-
-            h3 {
-                float: right;
-            }
-
-            h4 {
-                float: left;
-            }
-        }
-
-        .profile-section-header h4, .profile-section-header h3 {
-            
-            &:after{
-                content: ', ';
-                margin-right: 0.5em;
-            }
-        }
-    }
-
-    .fa-circle {
-        display: none;
-    }
-    .fa-stack-2x {
-        font-size: 1em;
-    }
-    .fa-inverse {
-        color: #333;
-    }
-
-    .profile-information, .profile-education, .profile-employment, .profile-skills {
-        .profile-section-title {
-            background-color: $mainBackgroundColour;
-            color: inherit;
-        }
-    }
-
-    .profile-education, .profile-employment, .profile-skills {
-        .profile-section-name, .profile-section-details, .profile-when {
-            display: inline-block;
-            min-width: initial;
-            vertical-align: top;
-        }
-
-        .profile-section-title {
-            padding-left: $horizontalSpacingPrint;
-            padding-right: $horizontalSpacingPrint;
-        }
-    }
-
-    .profile-information {
-        
-        .profile-name {
-            width: auto;
-
-            font-size: $fontSizeTitlePrint;
-            line-height: $fontSizeTitlePrint;
-
-            margin-left: -0.07em;
-        }
-
-        .profile-section-header {
-            padding-top: 0;
-            margin-bottom: $fontSizeStandardPrint;
-        }
-
-        .profile-section-details {
-            line-height: 1.5em;
-            margin-top: 0.5em;
-
-            font-size: inherit;
-        }
-
-        .profile-section-content {
-            margin-top: ($fontSizeTitlePrint / 2);
-        }
-
-        .profile-phone, .profile-email, .profile-www {
-            margin-right: $fontSizeStandardPrint;
-        }
-
-        .profile-www a:before {
-            content: 'www.';
-        }
-
-        .profile-icon, .profile-image, .profile-section-title, .profile-position {
-            display: none;
-            margin: 0;
-        }
-
-    }
-
-    .profile-employment .profile-section-title {
-        margin-bottom: (0.5 * $fontSizeStandardPrint);
-    }
-
-    .profile-section-content{
-        margin: 0;
+    .profile-employment {
+        /* Page break directives are not supported in grid yet by the looks of it
+         * https://stackoverflow.com/questions/58879352/why-doesnt-page-break-work-with-css-display-grid
+         * 
+         * Need to pad this element down a bit so it can print
+         */
+        padding-top: 7rem;
     }
 }

@@ -3,12 +3,17 @@
 @import "commonStyle";
 
 /* Font Definitions */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Oswald:wght@700&display=swap');
 
 /* Global Reset */
 * {
     margin: 0;
     padding: 0;
+
+    @include respond-to(print) {
+        color: #000!important;
+        background: 0 0!important;
+    }
 }
 
 html {
@@ -20,7 +25,8 @@ html, body {
 }
 
 body {
-	color: $mainFontColour;
+    color: $mainFontColour;
+    background-color: $bodyBackgroundColour;
 	font-family: $contentFonts;
 	font-weight: $contentFontWeight;
 
@@ -99,25 +105,11 @@ a {
 /*
 /*****************************************************************************/
 
-.footer {
-    // @extend .heading;
-    background-color: $main;
-    color: $headerFontColour;
-
-    padding: 1em 1em 1em 2em;
-    text-align: center;
-
-    p {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-}
-
 .container{
 
     .site {
     	/*	background*/
-    	background-color: $backgroundColour;
+    	background-color: $mainBackgroundColour;
     	
     	/* text */
     	line-height: $lineHeightEM;
@@ -133,38 +125,30 @@ a {
         margin: 5vh 2vw;
     	padding-bottom: 0;
         @include respond-to(handhelds) {
-            padding-top: 1em;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0;
         };
-        
-
-        h2 {
-    		font-family: $headerFonts;
-    		text-align: left;    
-
-            @include respond-to(print) {
-                font-family: $headerPrintFonts;
-            };
-        }
     
-    	.footer {
-    	    	        
-   	        font-size: 0.8em;
-    		// overflow: hidden;
-    		padding-top: 1em;
-    		z-index: 1;
-    		
-    		.copy {
-    			width: 100%;
-                padding-top: 1em;
-    			text-align: center;
-    		}
-    	}
+    	
     }
 }
 
-/* Style applied to font awesome icons to customise their display */
+.footer {
+    	    	        
+    // font-size: 0.8em;
+ 
+    padding: 0 0 1em 0;
+    text-align: center;
+
+    p {
+        margin: 0;
+    }
+    
+    @include respond-to(print) {
+        display: none;
+    }
+}
+
+/* Style applied to icons to customise their display */
 .icon {
     text-align: center;
     
@@ -175,8 +159,6 @@ a {
     padding: 0.25em;
     margin: 0.25em;
     border-radius: 50%;
-    border-width: 2px;
-    border-style: solid;
     transition: all .5s;
 
     &:hover {

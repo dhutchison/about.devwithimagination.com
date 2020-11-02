@@ -6,18 +6,9 @@
 //
 // Variables 
 //
-$backgroundBlue: #5D83C4;
-$dividerColour: #5D83C4;
-
-$headerBackgroundDarkBlue: #212E45; 
-// $headerFontColour: #DDDDDD;
-$headerLinkHoverColour: $backgroundBlue;
 
 $mainHeaderColour: #475261;
 $mainFontColour: #333333;
-$outerBackgroundColour: #666666;
-$shadowColour: #333333;
-$backgroundColour: #FFFFFF;
 
 $mainFontPrintColour: #000000;
 
@@ -27,7 +18,7 @@ $lineHeight: 1.5;
 $lineHeightEM: #{$lineHeight}em;
 
 $linkColour: $mainFontColour;
-$linkHoverColour: $dividerColour;
+$linkHoverColour: #5D83C4;
 
 
 
@@ -52,7 +43,7 @@ $horizontalSpacing: 2em;
 @mixin respond-to($media) {
     
     @if $media == handhelds {
-        @media #{$mqiPhone}, #{$mqHandheld} {
+        @media #{$mqHandheld} {
             @content
         }
     } @else if $media == tablets {

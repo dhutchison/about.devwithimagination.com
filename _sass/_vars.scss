@@ -1,10 +1,13 @@
 //$main: #2E2C2F;
 $main: #2E2C54;
 $sec: #1282A2;
-$tri: #ADE1E5;
+// $tri: #ADE1E5;
+$tri: #42a8c0;
 
 $headerFontColour: #DDDDDD;
+$bodyBackgroundColour: #f5f5f5;
 $mainBackgroundColour: #FFF;
+
 
 /* Background particle configuration */
 $particle-spacing: 2560px;
@@ -13,8 +16,7 @@ $particle-timing-2: 120s;
 $particle-timing-3: 180s;
 
 /* Media query values */
-$mqiPhone: "only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px)";
-$mqHandheld: "only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px)";
+$mqHandheld: "only screen and (max-width: 767px)";
  
 $mqiPad: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) ";
 $mqTablet: "only screen and (min-width : 768px) and (max-width : 1024px) ";

@@ -144,10 +144,12 @@
     }
 
     #about-detail {
-        background-color: white;
+
+        background-color: $mainBackgroundColour;
         box-sizing: border-box;
 
         padding: 2em;
+        margin-bottom: 1em;
 
         display: grid;
 
@@ -197,7 +199,6 @@
       }
       
       .header {
-        z-index: 1;
         text-align: center;
         color: $mainBackgroundColour;
         position: absolute;
@@ -266,6 +267,12 @@
       .about-summary {
         text-align: center;
         margin: 5px auto;
+
+        img.profile-image {
+          width: 10rem;
+          height: 10rem;
+          border-radius: 5rem;
+        }
       }
 
 }
