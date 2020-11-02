@@ -17,3 +17,6 @@ plugins:
 excerpt_separator: <!--more-->
 
 exclude: [node_modules]
+
+sass:
+  style: compressed

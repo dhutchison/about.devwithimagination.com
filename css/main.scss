@@ -1,15 +1,12 @@
 ---
 ---
-/* Font awesome bits */
-@import "fontawesome-free-5.14.0-web/fontawesome";
-@import "fontawesome-free-5.14.0-web/brands";
-@import "fontawesome-free-5.14.0-web/regular";
-@import "fontawesome-free-5.14.0-web/solid";
 /* File containing the configuration variables that other stylesheets can depend on */
 @import "vars";
 /* Common styles which are global to the site */
 @import "commonStyle";
 @import "coreStyle";
+/* Custom icon font */
+@import "icons";
 /* The main about page specific styles */
 @import "about";
 /* CV specific styling */
