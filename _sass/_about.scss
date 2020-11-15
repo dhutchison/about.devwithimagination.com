@@ -223,6 +223,10 @@
 
         margin-top: 2rem;
         margin-bottom: 2rem;
+
+        a, a:hover {
+          text-decoration: none;
+        }
         
         .icon {
           color: $mainBackgroundColour;

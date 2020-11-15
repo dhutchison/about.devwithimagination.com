@@ -29,7 +29,7 @@ layout: default
           {% if sectionData.email %}
           <div class="profile-email">
             <span class="profile-field">Email: </span><a
-              href="mailto:{{ sectionData.email }}"><span class="icon icon-paperplane"></span>{{ sectionData.email }}</a></div>
+              href="mailto:{{ sectionData.email }}"><span class="icon icon-send"></span>{{ sectionData.email }}</a></div>
           {% endif %}
           {% if sectionData.website_link %}
           <div class="profile-www">
@@ -43,7 +43,6 @@ layout: default
       <section class="about profile-about profile-section">
         {% assign sectionData = site.data.resume.info %}
         <h3 class="profile-section-title">
-          <span class="icon-info"></span>
           <span>About</span>
         </h3>
 
@@ -55,7 +54,6 @@ layout: default
       <section class="work profile-employment profile-section">
         {% assign sectionData = site.data.resume.experience %}
         <h3 class="profile-section-title">
-          <span class="icon-stats-dots"></span>
           <span>Employment</span>
         </h3>
 
@@ -65,9 +63,11 @@ layout: default
           <div class="profile-section-header">
             <div class="profile-section-name">
               {% for role in item.roles %}
-              <h3 class="profile-position">{{ role.title }}</h3>
-              <div class="profile-section-details">
-                <div class="profile-when">{{ role.when }}</div>
+              <div class="employment-position">
+                <h4 class="profile-position">{{ role.title }}</h4>
+                <div class="profile-section-details">
+                  <div class="profile-when">{{ role.when }}</div>
+                </div>
               </div>
               {% endfor %}
               <div class="employment-company">{{ item.where }}</div>
@@ -87,7 +87,6 @@ layout: default
       <section class="education profile-education profile-section">
         {% assign sectionData = site.data.resume.education %}
         <h3 class="profile-section-title">
-          <span class="icon-study"></span>
           <span>Education</span>
         </h3>
 
@@ -99,7 +98,7 @@ layout: default
               <h4 class="profile-name">{% if item.url %} <a href="{{ item.url }}" {% if item.urlalt %}
                   alt="{{ item.urlalt }}"
                   {% endif %}>{% endif %}{{ item.qualification }}{% if item.url %}</a>{% endif %}</h3>
-              <h5 class="profile-position">{{ item.location }}</h4>
+              <p class="profile-position">{{ item.location }}</p>
             </div>
             <div class="profile-section-details">
               <div class="profile-when">
@@ -117,7 +116,6 @@ layout: default
       <section class="skills profile-skills profile-section">
         {% assign sectionData = site.data.resume.skills %}
         <h3 class="profile-section-title">
-          <span class="icon-embed2"></span>
           <span>Skills</span>
         </h3>
 

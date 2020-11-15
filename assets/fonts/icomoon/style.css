@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?73jnfo');
-  src:  url('fonts/icomoon.eot?73jnfo#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?73jnfo') format('truetype'),
-    url('fonts/icomoon.woff?73jnfo') format('woff'),
-    url('fonts/icomoon.svg?73jnfo#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?himhik');
+  src:  url('fonts/icomoon.eot?himhik#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?himhik') format('truetype'),
+    url('fonts/icomoon.woff?himhik') format('woff'),
+    url('fonts/icomoon.svg?himhik#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,39 +25,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-study:before {
-  content: "\e902";
-}
-.icon-paperplane:before {
-  content: "\e903";
-}
 .icon-chevrons-down:before {
   content: "\e900";
 }
 .icon-chevrons-up:before {
   content: "\e901";
 }
-.icon-quill:before {
-  content: "\e907";
-}
-.icon-phone:before {
-  content: "\e942";
-}
-.icon-user-tie:before {
-  content: "\e976";
-}
-.icon-stats-dots:before {
-  content: "\e99b";
-}
-.icon-link:before {
-  content: "\e9cb";
-}
-.icon-info:before {
-  content: "\ea0c";
-}
-.icon-embed2:before {
-  content: "\ea80";
+.icon-file-text:before {
+  content: "\e903";
 }
 .icon-github:before {
-  content: "\eab0";
+  content: "\e904";
+}
+.icon-link:before {
+  content: "\e905";
+}
+.icon-phone:before {
+  content: "\e906";
+}
+.icon-send:before {
+  content: "\e907";
 }
