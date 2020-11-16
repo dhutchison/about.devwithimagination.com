@@ -166,10 +166,6 @@
     .profile-name a:hover {
         text-decoration: underline;
     }
-
-    // .profile-position, .profile-when {
-    //     color: $headerFontColour;
-    // }
 }
 
 .about, .work {
@@ -216,9 +212,7 @@
 }
 
 .profile-section-title {
-    display: block;
 
-    position: relative;
     line-height: 3em;
     text-align: left;
     text-transform: uppercase;
