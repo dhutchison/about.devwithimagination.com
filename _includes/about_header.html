@@ -1,0 +1,18 @@
+<div id="about-header-container">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+
+    <div class="header">
+        <h1 class="site-title">{{ site.data.about.name }}</h1>
+        <h2 class="site-description">{{ site.data.about.title }}</h2>
+        <div class="header-icons">
+          <a aria-label="Send email" href="mailto:{{ site.data.about.email }}"><span class="icon icon-send" aria-hidden="true"></span></a>
+          <a aria-label="My Blog" target="_blank" href="{{ site.data.about.blog }}"><span class="icon icon-file-text" aria-hidden="true"></span></a>
+          <a aria-label="My Github" target="_blank" href="https://www.github.com/{{ site.data.about.github }}"><span class="icon icon-github" aria-hidden="true"></span></i></a>
+        </div>
+    </div>
+    <div class="down">
+      <a href="#about-detail" data-scroll><span class="icon icon-chevrons-down fa-bounce" aria-hidden="true"></span></a>
+    </div>
+</div>

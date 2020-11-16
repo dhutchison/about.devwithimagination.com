@@ -1,6 +1,13 @@
 ---
 ---
-@import "font-awesome-4.4.0/font-awesome";
+/* File containing the configuration variables that other stylesheets can depend on */
+@import "vars";
+/* Common styles which are global to the site */
 @import "commonStyle";
 @import "coreStyle";
+/* Custom icon font */
+@import "icons";
+/* The main about page specific styles */
+@import "about";
+/* CV specific styling */
 @import "profileStyle";

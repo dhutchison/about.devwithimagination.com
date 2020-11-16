@@ -1,0 +1,55 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{page.title}} | {{ site.name }}</title>
+  <meta name="viewport" content="width=device-width">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  {% if page.headIncludes %}
+  <!-- other includes from pages -->
+  {% for inc in page.headIncludes %}
+  {{ inc }}
+  {% endfor %}
+  {% endif %}
+
+  <!-- Analytics -->
+  {% if jekyll.environment == "production" %}
+    {% include analytics.html %}
+  {% endif %}
+
+  <!-- Keywords -->
+  {% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords | join:' ' }}">
+  {% for keyword in page.keywords %}
+  <meta property="article:tag" content="{{ keyword }}">
+  {% endfor %}
+  {% endif %}
+
+  <!-- SEO content -->
+  <!--{ % seo title=false % }-->
+
+
+  <!-- Make older versions of IE understand HTML5 tags -->
+  <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    {{ content }}
+        
+    {% include footer.html %}
+  </div>
+</body>

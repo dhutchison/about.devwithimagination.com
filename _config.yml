@@ -2,13 +2,10 @@ name: David Hutchison
 description: I like to develop things. This is my profile.
 url: http://www.davidhutchison.scot
 
-jobtitle: Software Development Lead
+
 location: Scotland
-email: david@devwithimagination.com
-twitter: DavidHutchison
 
 highlighter: rouge
-#markdown: rdiscount
 markdown: kramdown
 timezone: Europe/London
 permalink: /:year/:month/:day/:title/
@@ -18,14 +15,8 @@ plugins:
 - jekyll-seo-tag
 
 excerpt_separator: <!--more-->
-drop_caps: false
 
 exclude: [node_modules]
 
-defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-      type: "posts" # previously `post` in Jekyll 2.2.
-    values:
-      layout: "post"
+sass:
+  style: compressed

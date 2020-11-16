@@ -1,10 +1,15 @@
 name: "David Hutchison"
 position: "Software Development Lead"
-phoned: "0770 868 9957"
+not_phone: "0770 868 9957"
 email: "david@devwithimagination.com"
-image: "/assets/images/self_square.jpg"
-website_link: "http://www.devwithimagination.com"
-website_display: "DevWithImagination.com"
-text: "I am a software developer with 9 years professional experience delivering solutions using a range of different technologies. I am passionate about good user interface design and building robust, maintainable software. I thrive when working under pressure and enjoy learning new technologies. I am always looking for a challenge."
+image: "/assets/images/self_small.jpg"
+website_link: "https://www.davidhutchison.scot"
+website_display: "davidhutchison.scot"
+text: >
+  I am a software developer with 12 years professional experience delivering solutions using a range of different technologies. 
+  I am passionate about building robust, maintainable software and a strong believer in automation of tasks to improve their speed and reliablity. 
+  I thrive when working under pressure and enjoy learning new technologies. 
+  <br/><br/>
+  I am always looking for a challenge.
 download_path: "/assets/pdf/DavidHutchison.pdf"
 notqrcode_image: "/assets/images/profile_qrcode.png"

@@ -1,0 +1,288 @@
+@import "commonStyle";
+
+/* Icon bouncing logic. 
+ * Thanks to @gubi and this gist
+ */ 
+ .fa-bounce {
+  display: inline-block;
+  position: relative;
+  -moz-animation: bounce 1s infinite linear;
+  -o-animation: bounce 1s infinite linear;
+  -webkit-animation: bounce 1s infinite linear;
+  animation: bounce 1s infinite linear;
+}
+
+@-webkit-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-moz-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-o-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-ms-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+
+
+
+/* Particle animation logic
+ * Thanks to Alexi Taylor & this codepen for 
+ * some of this logic https://codepen.io/alexitaylor/pen/RgxJwg 
+ */
+
+/* mixins */
+@function particles($max, $particle-colour) {
+  $val: 0px 0px $particle-colour;
+  @for $i from 1 through $max {
+    $val: #{$val}, random($particle-spacing)+px random($particle-spacing)+px $particle-colour;
+  }
+  @return $val;
+}
+
+@mixin particles($max, $particle-colour) {
+  box-shadow: particles($max, $particle-colour);
+  border-radius: 50%;
+}
+
+.particle, .particle:after {
+  background: transparent;
+}
+
+.particle:after {
+  position: absolute;
+  content: "";
+  top: $particle-spacing;
+}
+
+.particle-1 {
+  animation: animParticle $particle-timing-1 linear infinite;
+  @include particles(1000, $sec);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-1:after {
+  @include particles(900, $sec);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2 {
+  animation: animParticle $particle-timing-2 linear infinite;
+  @include particles(800, $sec);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2:after {
+  @include particles(500, $sec);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-3 {
+  animation: animParticle $particle-timing-3 linear infinite;
+  @include particles(1200, $sec);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-3:after {
+  @include particles(700, $sec);
+  height: 1px;
+  width: 1px;
+}
+
+@keyframes animParticle {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY($particle-spacing * -1);
+  }
+}
+
+
+/* Main page content */
+.about-container {
+
+    height: 100%;
+    box-sizing: border-box;
+
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+
+    h2 {
+        text-align: center;
+    }
+
+    .about-child {
+        scroll-snap-align: start;
+
+        min-height: 100vh;
+    }
+
+    #about-detail {
+
+        background-color: $mainBackgroundColour;
+        box-sizing: border-box;
+
+        padding: 2em;
+        margin-bottom: 1em;
+
+        display: grid;
+
+        grid-auto-rows: minmax(3rem, auto);
+        column-gap: 1em;
+        row-gap: 1em;
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "summary summary summary"
+            "blog email cv";
+
+        @include respond-to(handhelds) {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "summary"
+            "blog"
+            "email"
+            "cv";
+        }
+    }
+
+    .about-summary {
+      grid-area: summary;
+
+      max-width: 75vw;
+
+      @include respond-to(handhelds) {
+        max-width: max-content;
+      }
+    }
+    .about-detail-blog {
+      grid-area: blog;
+    }
+    .about-detail-email {
+      grid-area: email;
+    }
+    .about-detail-cv {
+      grid-area: cv;
+    }
+
+    #about-header-container {
+        background: $main;
+        display: flex;
+        vertical-align: bottom;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        
+        height: 100vh;
+        overflow: hidden;
+      }
+      
+      .header {
+        text-align: center;
+        color: $mainBackgroundColour;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0 auto;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        
+        .site-description {
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+        }
+      }
+      
+      .header-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+        text-align: center;
+
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+        a, a:hover {
+          text-decoration: none;
+        }
+        
+        .icon {
+          color: $mainBackgroundColour;
+          border-color: $mainBackgroundColour;
+
+          font-size: 2rem;
+
+          &:hover {
+            color: $main;
+            background: $mainBackgroundColour;
+          }
+          &:active {
+            color: $main;
+            background: $mainBackgroundColour;
+          }
+        }
+      }
+      
+      .down {
+        position: absolute;
+        bottom: 25px;
+        width: 100%;
+
+        text-align: center;
+        font-size: 2rem;
+        line-height: 2rem;
+
+        a {
+          color: $mainBackgroundColour;
+        
+          &:hover, &:active {
+            color: $sec;
+          }
+        }
+      }
+      
+      .about-detail-link-child {
+        margin: 1em;
+        text-align: center;
+      }
+      
+      .about-summary {
+        text-align: center;
+        margin: 5px auto;
+
+        img.profile-image {
+          width: 10rem;
+          height: 10rem;
+          border-radius: 5rem;
+        }
+      }
+
+}
