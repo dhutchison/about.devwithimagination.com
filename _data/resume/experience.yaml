@@ -5,25 +5,34 @@
   - title : "Software Developer"
     when : "July 2008 - December 2014"
   text : |
-    I started off at SEEMiS as a fresh faced graduate, just out of university. In my time here I have honed my skills with a variety of technologies while also gaining confidence in my abilities as a developer, a development team lead, an aspiring software architect, and all the other roles I perform on a day-to-day basis.
+
+    My role in the organisation has expanded as my knowledge and experience have been proven. In my time here I have honed my skills with a variety of technologies while also gaining confidence in my abilities as a developer, a development team lead, an aspiring software architect, and all the other roles I perform on a day-to-day basis. With the number of responsibilities I have, this requires strong time management skills to assess priorities, but also ensure that others get support at the right time to ensure that bottlenecks are not introduced. 
     
-    This role consists of developing and supporting Management Information Systems used in the education sector by all 32 of the Scottish Councils. 
+    Knowledge sharing is an integral part of my role. As a development lead I mentor teams to improve their skills, promote best practices and ultimately work towards being able to function as more of a self-managing team with the knowledge & experience to do so. 
 
-    My main responsibilities have grown over time, they now include : 
+    I have proven abilities in the full project lifecycle, from requirements capture involving clients and external organisations through to the integration and support of a delivered solution. I am able to design an implement quality systems both on my own or leading a team. 
+
+    * My current primary project is the development of a new application & platform, replacing core pieces of the existing application suite, built on AWS using a micro-services based architecture. Key technologies including MicroProfile, Payara Micro, PostgreSQL, DynamoDB, and a CI/CD solution built on top of the AWS Code suite of tools. I am a technical lead on many areas of the design & implementation, including deployment, application design, and parallel running. I also lead the implementation team which is primarily focused on the API and backend development, and soon to be legacy integration
+    * Many years of experience designing & developing a large JavaEE application suite with many interdependencies and interlinks. Combining a mixture of new developments and additions to existing systems. More modern projects introduced RESTful (JAX-RS) API development, with also a lot of experience with SOAP (JAX-WS) web services and a variety of older technologies
+    * Always looking for opportunities where frameworks could be used or developed to reduce repetitive boilerplate, simplify development, and improve efficiency
+    * Advocate for always considering how changes in the industry or team dynamics can change processes to optimise the delivery process and lower costs
+    * Worked in agile (using Scrum/Kanban as appropriate) and waterfall projects
+    * Always considering resilience, security, performance, and efficiency in designs & developments
+      * Working with both internal and external security specialists to support penetration testing and resolve/mitigate any issues found
+      * Using monitoring tools proactively during performance testing to identify application tuning opportunities that were not identified during reviews.
+      * Designing performance test plans, either based on anticipated usage from business requirements, or extrapolation from monitoring of small-scale releases
+    * Work with both technical and non-technical people across the organisation for everything from requirements capture through release & end user support
+      * This includes a wide range of roles, which requires tailoring communication to the right level for use by SMT, Development/Project Managers, other Development Leads, Infrastructure, Business Analysts, Testers, Trainers, and the Support Team
+    * Extensive experience in supporting applications, including 
+      * setting up & using monitoring systems for proactive & reactive purposes
+      * application and platform troubleshooting, including deep dives into protocol or application server internals
+      * providing third-level helpdesk support
+    * Heavily involved in technical screening & interview process for new developers
+    * Brought in many improvements by using more automation over the years, including
+      * process automation
+      * automated testing & quality checks
+      * release process automation
+      * introduction of configuration as code and scripted server installation processes for both application servers and local development environments
+
+
     
-    - Full software development cycle involving clients and teams of developers, from requirements capture all the way through to delivery. 
-    - Database design, implementation and optimization. The main database has always been Microsoft SQL Server, but in the latest developments we are moving to PostgreSQL.
-    - Producing deliverable specifications from requirements which can be implemented by other developers.
-    - Testing of software; both during development and final integration testing using both manual and automated methods (using JUnit). This includes production of test plans for integration testing by other developers and the Client Support team prior to deployment. 
-    - Presentation of developments to Client Support team and clients in a non-technical manner. 
-    - Planning project using Scrum methodology, using Jira as our ticket management tool, to meet deadlines. 
-    - Mentor and advise other developers where required. 
-    - Production of technically focused documentation for new and existing systems. 
-    - Working with external organisations on integration projects. 
-    - Working with the Infrastructure team on new projects and resolving issues. 
-    - Configuration of application servers in a scripted and reproducible way.
-
-    For many years my role also included providing third tier helpdesk support, but as the structure of the organisation has evolved, I only become involved in circumstances that require my specialised knowledge and expertise.
-     
-    During my time here I have worked with a number of frameworks, both legacy and current. Server frameworks I have used include Spring, JDBC, EJB, RMI and various flavours of web services (RPC, SOAP and REST). User interface development has mostly been in Swing, but I have also had experience with JSP / servlets, HTML / Javascript and Echo2. Many open source products have been used in the solutions such as iText, JasperReports, SwingX and JXL, some which required fixes to be contributed.
-
