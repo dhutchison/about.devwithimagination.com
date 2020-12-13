@@ -1,4 +1,22 @@
 text: |
     Through my time doing professional, academic, and hobbyist software development I have worked with a wide selection of software technologies. I enjoy learning new technologies as required to solve problems and try to keep up to date with both new technology and industry developments.
-        
-    In addition to the technologies I have listed as part of my day to day work, I also have past experience using: JAX-WS, JAX-B, Java EE, MicroProfile, Glassfish, Payara, JBoss, ApacheDS, Axis 1.4 (with WSS4J), TypeScript, Angular, Docker, PHP, HTML, CSS (with SCSS/LESS), Jekyll, Ruby and Python.
+
+    Outside of the self-driven research & development I do which is related to the technologies used in my day-to-day work, I also dabble in IoT, home automation and some web development. I, somewhat infrequently, write a blog detailing solutions that I could not find good material on. Some of this research & development ends up feeding back in to solutions to problems faced in my day-to-day work, or takes the form of proposals for improved tools & technologies.
+
+    I am used to delving into the internals of open source libraries to reverse engineer why something works the way it does, and provide feedback (or fixes) to issues I encounter. 
+
+    **Programming languages:** Java 11 (from 5), TypeScript, Bash, HTML, CSS (with SCSS/LESS), JavaScript, Angular, Ruby, Python
+
+    **Application libraries:** Java/Jakarta EE (JAX-RS, JAX-WS, CDI, EJB), MicroProfile, Swing, JasperReports, iText, JSP
+
+    **Build tools:**  Maven, Ant
+
+    **Databases:** Microsoft SQL Server, PostgreSQL, SQLite
+
+    **Testing Tools/Frameworks:** Junit 4/5, TestContainers, Mockito, Jmeter SoapUI, Postman, RestAssured, Wiremock, Jest, Jasmine
+
+    **Continuous Integration:** Jenkins, AWS Code suite, GitHub Actions, Sonatype Nexus, SonarQube
+
+    **Monitoring:** AppDynamics
+    
+    **Deployments:** Payara, Glassfish, Jboss, Tomcat, Apache, ApacheDS, nginx, Docker
