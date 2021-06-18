@@ -1,7 +1,9 @@
 - where : "The SEEMiS Group LLP, Hamilton"
   roles :
+  - title: "DevOps Architect"
+    when: "January 2021 - Present"
   - title : "Software Development Lead"
-    when : "January 2015 - Present" 
+    when : "January 2015 - December 2020" 
   - title : "Software Developer"
     when : "July 2008 - December 2014"
   text : |
