@@ -13,6 +13,7 @@ relative_permalinks: false
 
 plugins:
 - jekyll-seo-tag
+- jekyll-sitemap
 
 excerpt_separator: <!--more-->
 
