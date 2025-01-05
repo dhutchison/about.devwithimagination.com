@@ -1,5 +1,12 @@
 [
 	{
+		"location": "Amazon Web Services Training and Certification",
+		"qualification": "AWS Certified Solutions Architect – Associate",
+		"url": "https://www.credly.com/badges/fdf3e6d1-5345-4d46-b424-59f9c95218d3/public_url", 
+		"urlalt":  "Credly badge",
+		"when": "2024"
+	}, 
+	{
 		"location": "QA",
 		"qualification": "Training for Professional Scrum Master (QATPSM)",
 		"when": "2016"
