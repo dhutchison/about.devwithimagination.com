@@ -7,10 +7,17 @@ email: david@devwithimagination.com
 
 mastodon: https://mastodon.scot/@davidhutchison
 github: dhutchison
+linkedin: https://www.linkedin.com/in/david-hutchison-dev
 
 bio: |+
-  I am a DevOps Architect and Software Development Lead based in Carluke, Scotland.
+  I am a DevOps Architect and Software Development Lead based in central Scotland.
 
-  I like to develop things. Professionally, my background is in Java development but also extends as far as Linux server setup and pretty much everything in between. 
+  I like building things — from software to the platforms and automation to help teams deliver and maintain it. My background started in Java development and has grown to include cloud platforms, CI/CD, Python, Linux systems, and a fair bit of architectural problem-solving along the way.
 
-  In some of my free time I tinker with other technologies, which sometimes end up getting blogged about. 
+  In my spare time I tinker with other technologies, which sometimes turn into blog posts.
+
+  Away from the screen I enjoy spending time with my family and skating.
+
+bio_short: |+
+  I’m a DevOps Architect and Software Development Lead based in central Scotland, building software, platforms, and automation to help teams deliver reliable systems.
+  My background started in Java development and now spans cloud platforms, CI/CD, Python, and Linux.
