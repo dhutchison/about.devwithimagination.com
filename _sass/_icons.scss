@@ -1,54 +1,54 @@
 /*
- * Icon set from https://icomoon.io/app/
- * 
- * Usage is like: <span class="icon-chevrons-down"></span>
+ * Icon set from https://icomoon.io/app/, using SVG assets with CSS filters for coloring.
+ *
+ * Usage is like: <span class="icon icon-chevrons-down"></span>
  */
-  @font-face {
-    font-family: 'icomoon';
-    src:  url('/assets/fonts/icomoon/fonts/icomoon.eot?himhik');
-    src:  url('/assets/fonts/icomoon/fonts/icomoon.eot?himhik#iefix') format('embedded-opentype'),
-      url('/assets/fonts/icomoon/fonts/icomoon.ttf?himhik') format('truetype'),
-      url('/assets/fonts/icomoon/fonts/icomoon.woff?himhik') format('woff'),
-      url('/assets/fonts/icomoon/fonts/icomoon.svg?himhik#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  line-height: 1;
   
-  [class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .icon-chevrons-down:before {
-    content: "\e900";
-  }
-  .icon-chevrons-up:before {
-    content: "\e901";
-  }
-  .icon-file-text:before {
-    content: "\e903";
-  }
-  .icon-github:before {
-    content: "\e904";
-  }
-  .icon-link:before {
-    content: "\e905";
-  }
-  .icon-phone:before {
-    content: "\e906";
-  }
-  .icon-send:before {
-    content: "\e907";
-  }
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+
+  /* SVGs are black by default; invert(1) makes them white */
+  filter: invert(1);
+}
+
+.icon-chevrons-down {
+  background-image: url('/assets/fonts/icomoon/svg/chevrons-down.svg');
+}
+
+.icon-chevrons-up {
+  background-image: url('/assets/fonts/icomoon/svg/chevrons-up.svg');
+}
+
+.icon-file-text {
+  background-image: url('/assets/fonts/icomoon/svg/file-text.svg');
+}
+
+.icon-github {
+  background-image: url('/assets/fonts/icomoon/svg/github.svg');
+}
+
+.icon-linkedin {
+  background-image: url('/assets/fonts/icomoon/svg/linkedin.svg');
+}
+
+.icon-link {
+  background-image: url('/assets/fonts/icomoon/svg/link.svg');
+}
+
+.icon-phone {
+  background-image: url('/assets/fonts/icomoon/svg/phone.svg');
+}
+
+.icon-send {
+  background-image: url('/assets/fonts/icomoon/svg/send.svg');
+}
+
   

@@ -239,14 +239,17 @@
           border-color: $mainBackgroundColour;
 
           font-size: 2rem;
+          background-color: transparent;
 
           &:hover {
             color: $main;
-            background: $mainBackgroundColour;
+            background-color: #FFF;
+            filter: none;
           }
           &:active {
             color: $main;
-            background: $mainBackgroundColour;
+            background-color: #FFF;
+            filter: none;
           }
         }
       }
