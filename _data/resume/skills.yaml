@@ -1,22 +1,22 @@
 text: |
-    Through my time doing professional, academic, and hobbyist software development I have worked with a wide selection of software technologies. I enjoy learning new technologies as required to solve problems and try to keep up to date with both new technology and industry developments.
+    I have built up a broad technical base through professional, academic, open-source, and personal software development. I enjoy learning new technologies when they help solve real problems, and I try to stay close enough to wider industry change to make pragmatic decisions about when a new tool or approach is worth adopting.
 
-    Outside of the self-driven research & development I do which is related to the technologies used in my day-to-day work, I also dabble in IoT, home automation and some web development. I, somewhat infrequently, write a blog detailing solutions that I could not find good material on. Some of this research & development ends up feeding back in to solutions to problems faced in my day-to-day work, or takes the form of proposals for improved tools & technologies.
+    Outside of my day-to-day work I explore adjacent technologies through side projects, open-source contributions, and home automation. That self-directed research often feeds back into professional work, either as practical solutions to problems I have encountered or as proposals for better tools, automation, and engineering practices.
 
-    I am used to delving into the internals of open source libraries to reverse engineer why something works the way it does, and provide feedback (or fixes) to issues I encounter. 
+    I am comfortable digging into the internals of open-source libraries to understand behaviour, diagnose awkward issues, and contribute feedback or fixes where appropriate. My open-source work includes contributions to cloud-radar, a Python library for testing AWS CloudFormation templates locally, alongside smaller tooling and plugin work.
 
-    **Programming languages:** Java 11 (from 5), TypeScript, Bash, HTML, CSS (with SCSS/LESS), JavaScript, Angular, Ruby, Python
+    **Programming languages:** Java, TypeScript, Python, Bash, JavaScript, Ruby, HTML, CSS, SCSS/LESS
 
-    **Application libraries:** Java/Jakarta EE (JAX-RS, JAX-WS, CDI, EJB), MicroProfile, Swing, JasperReports, iText, JSP
+    **Application libraries:** Java/Jakarta EE (JAX-RS, JAX-WS, CDI, EJB), MicroProfile, Angular, Swing, JasperReports, iText, JSP
 
-    **Build tools:**  Maven, Ant
+    **Build tools:** Maven, Ant, Poetry
 
     **Databases:** Microsoft SQL Server, PostgreSQL, SQLite
 
-    **Testing Tools/Frameworks:** Junit 4/5, TestContainers, Mockito, Jmeter SoapUI, Postman, RestAssured, Wiremock, Jest, Jasmine
+    **Testing tools/frameworks:** JUnit, Testcontainers, Mockito, JMeter, SoapUI, Postman, REST Assured, WireMock, Cypress, Jest, Jasmine
 
-    **Continuous Integration:** Jenkins, AWS Code suite, GitHub Actions, Sonatype Nexus, SonarQube
+    **Continuous integration and quality:** Jenkins, AWS CodeBuild/CodePipeline, GitHub Actions, Sonatype Nexus, SonarQube
 
-    **Monitoring:** AppDynamics
+    **Cloud, observability and infrastructure:** AWS, Docker, OpenTelemetry, AppDynamics, Ansible, Semaphore UI, Git
     
-    **Deployments:** Payara, Glassfish, Jboss, Tomcat, Apache, ApacheDS, nginx, Docker
+    **Application platforms:** Payara, GlassFish, JBoss, Tomcat, Apache HTTP Server, ApacheDS, nginx

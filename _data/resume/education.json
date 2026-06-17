@@ -1,6 +1,13 @@
 [
 	{
 		"location": "Amazon Web Services Training and Certification",
+		"qualification": "AWS Certified AI Practitioner",
+		"url": "https://www.credly.com/badges/6bf2b8c3-0d07-41fc-ae0e-ae35b55b7525/public_url", 
+		"urlalt":  "Credly badge",
+		"when": "2026"
+	}, 
+	{
+		"location": "Amazon Web Services Training and Certification",
 		"qualification": "AWS Certified Solutions Architect – Associate",
 		"url": "https://www.credly.com/badges/fdf3e6d1-5345-4d46-b424-59f9c95218d3/public_url", 
 		"urlalt":  "Credly badge",
