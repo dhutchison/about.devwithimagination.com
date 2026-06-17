@@ -33,17 +33,6 @@
             "work";
     }
 
-    @include respond-to(print) {
-
-        grid-template-areas:
-        "about photo"
-        "about name"
-        "about contact"
-        "skills education"
-        "work work";
-
-        box-shadow: none;
-    }
 }
 
 /* Setup named grid areas */
@@ -130,10 +119,6 @@
 
     /* top right bottom left */
     padding: 1rem 1rem 0 1rem;
-
-    @include respond-to(print) {
-        padding: 1rem 2rem 0 3rem;
-    }
 }
 
 .name, .photo {
@@ -173,10 +158,6 @@
 
     @include respond-to(handhelds) {
         padding: 2rem 2rem 0;
-    }
-
-    @include respond-to(print) {
-        padding: 3rem 2rem 0 3rem;
     }
 }
 
@@ -254,17 +235,5 @@
 
     li {
         margin-left: $horizontalSpacing
-    }
-}
-
-@include respond-to(print) {
-
-    .profile-employment {
-        /* Page break directives are not supported in grid yet by the looks of it
-         * https://stackoverflow.com/questions/58879352/why-doesnt-page-break-work-with-css-display-grid
-         * 
-         * Need to pad this element down a bit so it can print
-         */
-        padding-top: 7rem;
     }
 }
