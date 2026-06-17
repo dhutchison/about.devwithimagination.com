@@ -8,33 +8,24 @@
     when : "July 2008 - December 2014"
   text : |
 
-    My role in the organisation has expanded as my knowledge and experience have been proven. In my time here I have honed my skills with a variety of technologies while also gaining confidence in my abilities as a developer, a development team lead, an aspiring software architect, and all the other roles I perform on a day-to-day basis. With the number of responsibilities I have, this requires strong time management skills to assess priorities, but also ensure that others get support at the right time to ensure that bottlenecks are not introduced. 
-    
-    Knowledge sharing is an integral part of my role. As a development lead I mentor teams to improve their skills, promote best practices and ultimately work towards being able to function as more of a self-managing team with the knowledge & experience to do so. 
+    My role at SEEMiS has grown as my experience, judgement, and technical breadth have been proven. I started as a Java software developer, moved into a development lead role, and now work as a DevOps Architect with a broad remit across platform architecture, software build and deployment, automated testing, observability, legacy platform risk, and senior technical assurance.
 
-    I have proven abilities in the full project lifecycle, from requirements capture involving clients and external organisations through to the integration and support of a delivered solution. I am able to design an implement quality systems both on my own or leading a team. 
+    I combine hands-on engineering with technical leadership and work across the delivery lifecycle, from early requirements and architectural direction through implementation, release, support, and continuous improvement. This often means working across team or technology boundaries, adapting the level of detail for technical teams, delivery colleagues, suppliers, and senior management while keeping risks visible. Knowledge sharing is an important part of how I work: I mentor teams, promote maintainable engineering practices, and help people build the confidence to own systems and processes themselves.
 
-    * My current primary project is the development of a new application & platform, replacing core pieces of the existing application suite, built on AWS using a micro-services based architecture. Key technologies including MicroProfile, Payara Micro, PostgreSQL, DynamoDB, and a CI/CD solution built on top of the AWS Code suite of tools. I am a technical lead on many areas of the design & implementation, including deployment, application design, and parallel running. I also lead the implementation team which is primarily focused on the API and backend development, and soon to be legacy integration
-    * Many years of experience designing & developing a large JavaEE application suite with many interdependencies and interlinks. Combining a mixture of new developments and additions to existing systems. More modern projects introduced RESTful (JAX-RS) API development, with also a lot of experience with SOAP (JAX-WS) web services and a variety of older technologies
-    * Always looking for opportunities where frameworks could be used or developed to reduce repetitive boilerplate, simplify development, and improve efficiency
-    * Advocate for always considering how changes in the industry or team dynamics can change processes to optimise the delivery process and lower costs
-    * Worked in agile (using Scrum/Kanban as appropriate) and waterfall projects
-    * Always considering resilience, security, performance, and efficiency in designs & developments
-      * Working with both internal and external security specialists to support penetration testing and resolve/mitigate any issues found
-      * Using monitoring tools proactively during performance testing to identify application tuning opportunities that were not identified during reviews.
-      * Designing performance test plans, either based on anticipated usage from business requirements, or extrapolation from monitoring of small-scale releases
-    * Work with both technical and non-technical people across the organisation for everything from requirements capture through release & end user support
-      * This includes a wide range of roles, which requires tailoring communication to the right level for use by SMT, Development/Project Managers, other Development Leads, Infrastructure, Business Analysts, Testers, Trainers, and the Support Team
-    * Extensive experience in supporting applications, including 
-      * setting up & using monitoring systems for proactive & reactive purposes
-      * application and platform troubleshooting, including deep dives into protocol or application server internals
-      * providing third-level helpdesk support
-    * Heavily involved in technical screening & interview process for new developers
-    * Brought in many improvements by using more automation over the years, including
-      * process automation
-      * automated testing & quality checks
-      * release process automation
-      * introduction of configuration as code and scripted server installation processes for both application servers and local development environments
+    Recent areas of focus include:
 
+    * Leading many aspects of the architecture and hands-on implementation of a new AWS-based Product Suite platform, replacing core parts of the existing MIS application suite with services built around Java/Jakarta EE, MicroProfile, Payara Micro, PostgreSQL, DynamoDB, Angular, and AWS-native tooling. I also developed reusable modules and service templates that allow backend teams to build and deploy their own services using the platform's established patterns. My work across delivery, observability, release testing, and wider technical problem solving helped the first release reach readiness for go-live.
+    * Designing and maturing the platform's CI/CD capabilities, including infrastructure deployment, quality controls, dependency handling, and the documentation needed for other teams to use and support them.
+    * Building release testing capabilities for Cypress UI tests, API acceptance tests, and reusable test data. This has included helping a primarily manual testing team move towards repeatable automation, while recognising that sustainable automation also requires clear processes and ownership.
+    * Developing operational readiness through tracing, centralised logging, AWS-native dashboards and metrics, monitoring strategy, and support processes, while helping development and platform teams understand how to use them in practice.
+    * Designing, developing, integrating, improving, and supporting a large Java/Jakarta EE application suite over many years - giving me a deep understanding of complex system dependencies, REST and SOAP services, shared frameworks, and the practical challenges of modernising long-lived systems without disrupting live services. Software Archaeology has been a recurring activity over the years.  
+    * Providing senior technical leadership across technical debt and legacy platform risk. I also work with internal and external security specialists on penetration testing, vulnerability remediation, and pragmatic risk mitigation.
+    * Modernising legacy developer tooling by establishing and proving a project-by-project CVS to Git migration process. This also creates opportunities for wider CI and SonarQube quality improvements.
+    * Modernising our non-AWS deployment approach using Ansible and Semaphore UI, with Maven-style artifact publishing through Nexus.
+    * Acting as a senior escalation point for complex application, platform, and infrastructure issues where the root cause is not immediately clear. This includes deep troubleshooting of application server behaviour, protocols, performance, and production incidents.
+    * Designing performance-test plans from anticipated usage or evidence from smaller-scale releases, then using monitoring and analysis to identify tuning opportunities.
+    * Helping teams improve how they work across sprint events, ticket workflows, engineering practices, and developer experience. This included recruiting, mentoring, and technically screening developers, as well as strengthening shared standards and processes so teams were less dependent on individual specialists.
+
+    Across both agile and waterfall projects, I look for practical ways to remove repetitive work, shorten feedback loops, and make systems easier to build, test, release, observe, and support. I like automation, but the useful kind - automation that makes the process clearer and more reliable rather than simply moving the complexity somewhere less visible.
 
     

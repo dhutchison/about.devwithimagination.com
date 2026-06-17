@@ -17,7 +17,9 @@ plugins:
 
 excerpt_separator: <!--more-->
 
-exclude: [node_modules]
+exclude:
+- node_modules
+- additional-context
 
 sass:
   style: compressed

@@ -3,3 +3,6 @@ _site
 Gemfile.lock
 wwwscot
 .DS_Store
+additional-context
+scripts/__pycache__
+

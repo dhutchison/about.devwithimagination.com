@@ -3,10 +3,36 @@
 {
 	"name": "Jekyll",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye"
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"runArgs": [
+		"--security-opt=seccomp=.devcontainer/seccomp-userns.json"
+	],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"features": {},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"openai.chatgpt"
+			]
+		}
+	},
+
+	"mounts": [
+		"source=/run/host-services/ssh-auth.sock,target=/run/host-services/ssh-auth.sock,type=bind",
+		"source=vscode-codex-persist,target=/home/vscode/.codex-persist,type=volume"
+	],
+	"containerEnv": {
+		"SSH_AUTH_SOCK": "/run/host-services/ssh-auth.sock"
+	},
+	"remoteEnv": {
+		"SSH_AUTH_SOCK": "/run/host-services/ssh-auth.sock"
+	},
+	"onCreateCommand": "sudo /usr/local/bin/devcontainer-post-start",
+	"waitFor": "onCreateCommand",
+	"postStartCommand": "sudo /usr/local/bin/devcontainer-post-start",
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],

@@ -5,12 +5,18 @@ email: "david@devwithimagination.com"
 image: "/assets/images/self_small.jpg"
 website_link: "https://about.devwithimagination.com"
 website_display: "about.devwithimagination.com"
-text: >
-  I am a software developer with over a decade of professional experience delivering solutions using a range of different technologies. 
-  I am passionate about building robust, maintainable software and a strong believer in automation of tasks to improve their speed and reliability. 
-  I thrive when working under pressure and enjoy learning new technologies. 
-  <br/><br/>
-  I am always looking for a challenge.
+text: |+
+
+  I am a seasoned Software Engineer turned DevOps Architect with a proven track record of leading teams, designing robust systems, and bridging development and operations. Over more than a decade at my current organisation, I've consistently expanded my role beyond what would be suggested by my job titles - evolving from Java Developer to Software Development Lead, to a technical authority on cloud platforms and system design.
+
+  I bring:
+
+  * End-to-end delivery expertise, from client requirements through to deployment, support, and continuous improvement.
+  * Hands-on leadership, mentoring teams toward autonomy and technical excellence, while preventing bottlenecks and enabling delivery.
+  * Architectural thinking, with deep technical breadth spanning Java, Python, CI/CD, Infrastructure as Code, Containerisation, Linux, and AWS platform engineering.
+  * A mindset for sustainable engineering - passionate about building robust, maintainable systems and leveraging automation to improve speed, consistency, and reliability.
+
+  I thrive in environments where I can lead by example - solving complex technical challenges, supporting team growth, and improving how systems are built and run. I'm always seeking the next challenge that lets me keep learning and building better systems.
   
 download_path: "/assets/pdf/DavidHutchison.pdf"
 notqrcode_image: "/assets/images/profile_qrcode.png"
